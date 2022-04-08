@@ -1,0 +1,55 @@
+.header {
+  padding: 60px 0;
+  background-image: url("../../assets/images/start-screen-background.jpg");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  &__wrapper {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  &__title > a {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+  &__subtitle > a {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+  }
+  &__nav-list {
+    display: flex;
+    gap: 36px;
+  }
+  &__item > a {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #cdcdcd;
+  }
+  &__item-checked > a {
+    color: #fafafa;
+    border-bottom: 3px solid #f1cdb3;
+    padding-bottom: 3px;
+  }
+}

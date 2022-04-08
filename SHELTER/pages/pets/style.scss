@@ -1,0 +1,14 @@
+@import "normalize";
+@import "global";
+@import "header";
+@import "main";
+@import "footer";
+
+@font-face {
+  font-family: arial;
+  src: url(../../assets/fonts/arial/arial-regular.ttf);
+}
+@font-face {
+  font-family: georgia;
+  src: url(../../assets/fonts/georgia/georgia-regular.ttf);
+}

@@ -1,0 +1,62 @@
+.intro {
+  background-image: url("../../assets/images/start-screen-background.jpg");
+  background-position: center -120px;
+  background-repeat: no-repeat;
+
+  &__wrapper {
+    display: flex;
+    gap: 33px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 135px;
+    width: 39%;
+  }
+  &__title {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 57px;
+    color: #ffffff;
+    width: 66%;
+    margin-bottom: 41px;
+  }
+  &__text {
+    margin-bottom: 42px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #cdcdcd;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    width: 207px;
+    height: 52px;
+    background-color: #f1cdb3;
+    border-radius: 100px;
+    &:hover {
+      background-color: #fddcc4;
+    }
+  }
+  &__img {
+    width: 698px;
+    height: 728px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

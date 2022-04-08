@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+li {
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(90deg, #423429 37.42%, #171719 50%);
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
