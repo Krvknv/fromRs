@@ -1,0 +1,122 @@
+.main {
+  padding: 81px 0 100px 0;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    margin-bottom: 58px;
+  }
+  &__card {
+    background: #fafafa;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    height: 435px;
+    cursor: pointer;
+    &:hover {
+      background-color: #fff;
+      .main__card-btn {
+        background-color: #fddcc4;
+        border: 2px solid #fddcc4;
+      }
+    }
+  }
+  &__img {
+    width: 270px;
+    height: 270px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__name {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  &__card-btn {
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    padding: 13px 45px;
+    background-color: transparent;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    // &:hover {
+    //   background-color: #fddcc4;
+    // }
+  }
+  &__btn {
+    background: #f1cdb3;
+    border-radius: 100px;
+    padding: 15px 45px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    &:hover {
+      background-color: #fddcc4;
+    }
+  }
+  &__pagination {
+    display: flex;
+    gap: 20px;
+    &-item {
+      width: 52px;
+      height: 52px;
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.06em;
+      color: #292929;
+      border: 2px solid #f1cdb3;
+      border-radius: 100px;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-disabled {
+        border: 2px solid #cdcdcd;
+        color: #cdcdcd;
+        cursor: auto;
+      }
+    }
+    &-num {
+      background: #f1cdb3;
+      border: none;
+      cursor: auto;
+    }
+  }
+}

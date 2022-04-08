@@ -1,0 +1,81 @@
+.donation {
+  background-color: #f6f6f6;
+  padding: 80px 0 100px 0;
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 25px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 30%;
+  }
+  &__img {
+    width: 505px;
+    height: 261px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__title {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  &__subtitle {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  &__card {
+    display: flex;
+    gap: 15px;
+    padding: 10px 15px;
+    background: #f1cdb3;
+    border-radius: 9px;
+    &:hover {
+      cursor: pointer;
+      background: #fddcc4;
+    }
+  }
+  &__icon {
+    width: 30px;
+    height: 23px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__number {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  &__text {
+    font-family: "Arial";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #b2b2b2;
+  }
+}

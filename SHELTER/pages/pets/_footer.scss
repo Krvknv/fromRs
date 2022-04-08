@@ -1,0 +1,113 @@
+.footer {
+  background-image: url("../../assets/images/Footer.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 42px;
+  &__wrapper {
+    display: flex;
+    gap: 130px;
+  }
+  &__content {
+    padding-top: 16px;
+    display: flex;
+    width: 64%;
+  }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 40%;
+    margin-right: 131px;
+  }
+  &__title {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+  }
+  &__mail {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  &__mail-img {
+    width: 40px;
+    height: 32px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__mail-text > a {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+  &__phone {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  &__phone-img {
+    width: 40px;
+    height: 32px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__phone-text > a {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+  &__location {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    width: 41%;
+  }
+  &__address {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__address-img {
+    width: 22px;
+    height: 32px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__address-text {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+  &__img {
+    width: 300px;
+    height: 310px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
