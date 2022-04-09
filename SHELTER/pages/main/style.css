@@ -379,9 +379,9 @@ body {
 
 .header {
   padding: 60px 0;
-  background-image: url("../../assets/images/start-screen-background.jpg");
-  background-position: center 0;
-  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
 }
 
 .header__wrapper {
@@ -461,9 +461,8 @@ body {
 }
 
 .intro {
-  background-image: url("../../assets/images/start-screen-background.jpg");
-  background-position: center -120px;
-  background-repeat: no-repeat;
+  padding-top: 11.25rem;
+  background: url("../../assets/png/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 
 .intro__wrapper {
@@ -949,10 +948,8 @@ body {
 }
 
 .footer {
-  background-image: url("../../assets/images/Footer.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding-top: 40px;
+  padding-top: 2.5rem;
+  background: url("../../assets/png/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 
 .footer__wrapper {
