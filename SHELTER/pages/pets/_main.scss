@@ -121,3 +121,44 @@
     }
   }
 }
+@media screen and (max-width: 1279px) {
+  .main {
+    padding: 81px 0 78px 0;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__list {
+      justify-content: center;
+      margin-bottom: 38px;
+    }
+    &__card-btn {
+      padding: 13px 43px;
+    }
+  }
+  .card__hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 43px 0 44px 0;
+    &__title {
+      font-size: 25px;
+      line-height: 32px;
+      margin-bottom: 42px;
+    }
+    &__list {
+      margin-bottom: 40px;
+    }
+    &__pagination {
+      gap: 10px;
+    }
+  }
+  .card__hidden {
+    display: none;
+  }
+  .card-hidden-mobile {
+    display: none;
+  }
+}
