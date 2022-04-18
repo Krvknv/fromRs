@@ -17,8 +17,8 @@
     width: 30%;
   }
   &__img {
-    width: 505px;
-    height: 261px;
+    max-width: 505px;
+    max-height: 261px;
     img {
       width: 100%;
       height: auto;
@@ -77,5 +77,62 @@
     font-size: 12px;
     line-height: 18px;
     color: #b2b2b2;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .donation {
+    &__wrapper {
+      flex-direction: column-reverse;
+      gap: 60px;
+    }
+    &__form {
+      width: 52%;
+    }
+    &__img {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .donation {
+    padding-top: 41px;
+    padding-bottom: 43px;
+    &__wrapper {
+      // padding-right: 0;
+      gap: 42px;
+    }
+    &__title {
+      font-size: 25px;
+      line-height: 32px;
+      text-align: center;
+    }
+    &__subtitle {
+      letter-spacing: 0;
+      line-height: 24px;
+      text-align: center;
+    }
+    &__form {
+      align-items: center;
+      width: 112%;
+      margin-left: 23px;
+    }
+    &__card {
+      align-items: center;
+    }
+    &__number {
+      font-size: 15px;
+      line-height: 17px;
+    }
+    &__text {
+      width: 91%;
+      text-align: justify;
+    }
+    &__img {
+      margin: 0;
+      max-width: 260px;
+      max-height: 135.2px;
+      margin-left: 17px;
+    }
   }
 }

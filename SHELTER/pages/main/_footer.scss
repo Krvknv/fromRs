@@ -103,11 +103,81 @@
     color: #f1cdb3;
   }
   &__img {
-    width: 300px;
-    height: 310px;
+    // display: block;
+    max-width: 300px;
+    max-height: 310px;
     img {
       width: 100%;
       height: auto;
+    }
+  }
+}
+@media screen and (max-width: 1279px) {
+  .footer {
+    padding-top: 1.875rem;
+    &__title {
+      letter-spacing: 0.1rem;
+    }
+    &__wrapper {
+      flex-direction: column;
+      gap: 64px;
+      justify-content: center;
+      align-items: center;
+    }
+    &__content {
+      width: 100%;
+      padding-top: 0;
+      justify-content: space-between;
+    }
+    &__contact {
+      max-width: 278px;
+      width: 100%;
+      margin-left: 38px;
+      margin-right: 0;
+    }
+    &__location {
+      max-width: 300px;
+      width: 100%;
+      margin-right: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding-top: 1.8125rem;
+    &__wrapper {
+      gap: 40px;
+    }
+    &__title {
+      font-size: 25px;
+      line-height: 32px;
+      text-align: center;
+      width: 98%;
+    }
+    &__content {
+      padding: 0;
+      width: 64%;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__contact {
+      width: 131%;
+      margin: 0;
+      margin-bottom: 40px;
+      align-items: center;
+    }
+    &__phone {
+      justify-content: center;
+    }
+    &__location {
+      width: 156%;
+      gap: 40px;
+      margin-right: 0;
+    }
+    &__img {
+      max-width: 260px;
+      max-height: 269px;
     }
   }
 }

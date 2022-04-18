@@ -19,11 +19,10 @@
   }
   &__list {
     margin: 0 auto;
-    width: 86%;
     display: flex;
     gap: 55px 120px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center; //проверить
   }
   &__item {
     display: flex;
@@ -48,5 +47,43 @@
     line-height: 23px;
     letter-spacing: 0.06em;
     color: #545454;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .help {
+    &__list {
+      gap: 55px 60px;
+    }
+    &__item {
+      width: 170px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .help {
+    padding-top: 44px;
+    padding-bottom: 40px;
+    &__title {
+      font-size: 25px;
+      line-height: 32px;
+      margin-bottom: 42px;
+    }
+    &__list {
+      gap: 27px 30px;
+      justify-content: left;
+      padding-left: 5px;
+    }
+    &__item {
+      width: 130px;
+      gap: 17px;
+    }
+    &__img {
+      width: 50px;
+      height: 50px;
+    }
+    &__name {
+      font-size: 15px;
+    }
   }
 }

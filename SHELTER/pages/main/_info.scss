@@ -10,8 +10,8 @@
     margin: 0 auto;
   }
   &__img {
-    width: 300px;
-    height: 408px;
+    max-width: 300px;
+    max-height: 408px;
     img {
       width: 100%;
       height: auto;
@@ -40,5 +40,43 @@
     font-size: 15px;
     line-height: 160%;
     color: #4c4c4c;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .info {
+    padding-bottom: 60px;
+    &__wrapper {
+      flex-direction: column-reverse;
+      gap: 80px;
+    }
+    &__form {
+      width: 61%;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .info {
+    padding-top: 43px;
+    padding-bottom: 42px;
+    &__wrapper {
+      gap: 41px;
+    }
+    &__form {
+      width: 90%;
+      align-items: center;
+      gap: 23px;
+    }
+    &__title {
+      width: 85%;
+      font-size: 25px;
+      text-align: center;
+    }
+    &__text {
+      text-align: justify;
+    }
+    &__img {
+      max-width: 260px;
+      max-height: 353.6px;
+    }
   }
 }

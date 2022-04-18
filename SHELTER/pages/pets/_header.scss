@@ -34,6 +34,9 @@
     letter-spacing: 0.1em;
     color: #292929;
   }
+  &__burger {
+    display: none;
+  }
   &__nav-list {
     display: flex;
     gap: 36px;
@@ -50,5 +53,122 @@
     color: #292929;
     border-bottom: 3px solid #f1cdb3;
     padding-bottom: 3px;
+  }
+}
+.logo__mobile {
+  display: none;
+}
+@media screen and (max-width: 1279px) {
+  .header {
+    padding: 30px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .logo__mobile {
+    display: flex;
+    z-index: 76;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    .header__title > a {
+      color: #f1cdb3;
+    }
+    .header__subtitle > a {
+      color: #ffffff;
+    }
+  }
+  .header {
+    padding: 30px 0;
+    &__item > a {
+      color: #cdcdcd;
+    }
+    &__item-checked > a {
+      color: #fafafa;
+    }
+    &__wrapper {
+      justify-content: flex-start;
+      gap: 0;
+    }
+    &__logo {
+      margin-right: 41px;
+    }
+    &__burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 70;
+      gap: 9px;
+      transition: all 0.3s ease-in-out;
+    }
+    &__burger-line {
+      width: 30px;
+      height: 2px;
+      z-index: 75;
+      background-color: #000000;
+    }
+    &__burger.open {
+      transform: rotate(90deg);
+      transition: all 0.3s ease-in-out;
+      margin-left: 34px;
+    }
+    &__cover-undermenu {
+      display: none;
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 823px;
+      z-index: 20;
+      background-color: rgba(41, 41, 41, 0.6);
+      opacity: 50%;
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      overflow-x: hidden;
+    }
+    &__nav {
+      transition: 0.8s;
+      display: flex;
+      position: fixed;
+      z-index: 50;
+      background-color: #292929;
+      width: 320px;
+      min-height: 823px;
+      top: 0;
+      align-items: center;
+      justify-content: center;
+      height: 327px;
+      &-list {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        margin-left: -16px;
+        li {
+          a {
+            font-size: 32px;
+            line-height: 51px;
+          }
+        }
+      }
+    }
+  }
+  .nav__hidden {
+    right: -320px;
+  }
+  .nav__open {
+    right: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__burger.open {
+    margin-left: 0;
+  }
+  .header__nav-list {
+    margin: 0;
   }
 }
