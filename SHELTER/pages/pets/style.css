@@ -797,6 +797,9 @@ body {
     padding: 81px 0 78px 0;
   }
   .main__title {
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
     margin-bottom: 30px;
   }
   .main__list {
@@ -813,7 +816,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .main {
     padding: 43px 0 44px 0;
   }
@@ -828,10 +831,7 @@ body {
   .main__pagination {
     gap: 10px;
   }
-  .card__hidden {
-    display: none;
-  }
-  .card-hidden-mobile {
+  .card__hidden-mobile {
     display: none;
   }
 }
