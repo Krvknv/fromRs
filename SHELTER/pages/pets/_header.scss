@@ -93,6 +93,9 @@
       margin-right: 41px;
     }
     &__burger {
+      position: absolute;
+      right: 53px;
+      top: 49px;
       display: flex;
       flex-direction: column;
       justify-content: center;

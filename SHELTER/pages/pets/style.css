@@ -518,6 +518,9 @@ body {
     margin-right: 41px;
   }
   .header__burger {
+    position: absolute;
+    right: 53px;
+    top: 49px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
