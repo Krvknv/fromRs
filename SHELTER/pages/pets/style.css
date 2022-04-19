@@ -391,6 +391,9 @@ body {
 .header {
   padding: 30px 0;
   background: #ffffff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .header__wrapper {
