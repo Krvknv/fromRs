@@ -996,6 +996,7 @@ body {
 }
 
 .footer__img {
+  display: block;
   max-width: 300px;
   max-height: 310px;
 }
