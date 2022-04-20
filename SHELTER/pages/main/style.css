@@ -1381,7 +1381,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 112%;
+    width: 100%;
     margin-left: 23px;
   }
   .donation__card {
