@@ -112,16 +112,13 @@
               are looking for a house
             </h2>
             <div class="gallery__slider">
-              <button class="gallery__slider-btn">
+              <button class="gallery__slider-btn btn-prev">
                 <img src="../../assets/icons/Arrow.svg" alt="arrow" />
               </button>
               <div class="gallery__list">
                 <div class="gallery__card">
                   <div class="gallery__img">
-                    <img
-                      src="../../assets/images/pets-katrine.jpg"
-                      alt="Katrine"
-                    />
+                    <img alt="Katrine" />
                   </div>
                   <span class="gallery__name">Katrine</span>
                   <button type="button" class="gallery__card-btn">
@@ -130,10 +127,7 @@
                 </div>
                 <div class="gallery__card card-hidden-mobile">
                   <div class="gallery__img">
-                    <img
-                      src="../../assets/images/pets-jennifer.jpg"
-                      alt="Jennifer"
-                    />
+                    <img alt="Jennifer" />
                   </div>
                   <span class="gallery__name">Jennifer</span>
                   <button type="button" class="gallery__card-btn">
@@ -141,23 +135,21 @@
                   </button>
                 </div>
                 <div class="gallery__card card-hidden">
-                  <div class="gallery__img">
-                    <img src="../../assets/images/pets-woody.jpg" alt="Woody" />
-                  </div>
+                  <div class="gallery__img">alt="Woody" /></div>
                   <span class="gallery__name">Woody</span>
                   <button type="button" class="gallery__card-btn">
                     Learn more
                   </button>
                 </div>
               </div>
-              <button class="gallery__slider-btn">
+              <button class="gallery__slider-btn btn-next">
                 <img src="../../assets/icons/ArrowR.svg" alt="arrow" />
               </button>
               <div class="gallery__btns-mobile">
-                <button class="gallery__btn-mobile">
+                <button class="gallery__btn-mobile btn-prev">
                   <img src="../../assets/icons/Arrow.svg" alt="arrow" />
                 </button>
-                <button class="gallery__btn-mobile">
+                <button class="gallery__btn-mobile btn-next">
                   <img src="../../assets/icons/ArrowR.svg" alt="arrow" />
                 </button>
               </div>
@@ -166,6 +158,46 @@
               Get to know the rest
             </a>
           </div>
+        </div>
+        <div class="cover" style="display: none"></div>
+        <div class="modal" style="display: none">
+          <div class="modal__img">
+            <img
+              src="../../assets/images/pets-jennifer-modal.jpg"
+              alt="Jennifer"
+            />
+          </div>
+          <div class="modal__content">
+            <h3 class="modal__title">Jennifer</h3>
+            <span class="modal__subtitle">Dog - Labrador</span>
+            <p class="modal__text">
+              Jennifer is a sweet 2 months old Labrador that is patiently
+              waiting to find a new forever home. This girl really enjoys being
+              able to go outside to run and play, but won't hesitate to play up
+              a storm in the house if she has all of her favorite toys.
+            </p>
+            <ul class="modal__list">
+              <li class="modal__item">
+                <span class="modal__item_property">Age:</span>
+                <span class="modal__item_value">2 months</span>
+              </li>
+              <li class="modal__item">
+                <span class="modal__item_property">Inoculations:</span>
+                <span class="modal__item_value">none</span>
+              </li>
+              <li class="modal__item">
+                <span class="modal__item_property">Diseases:</span>
+                <span class="modal__item_value">none</span>
+              </li>
+              <li class="modal__item">
+                <span class="modal__item_property">Parasites:</span>
+                <span class="modal__item_value">none</span>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="modal__btn_close">
+            <img src="../../assets/icons/close.svg" alt="cross" />
+          </button>
         </div>
       </section>
       <section class="help" id="help">
@@ -364,6 +396,6 @@
         </div>
       </div>
     </footer>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

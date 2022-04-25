@@ -65,14 +65,14 @@
             are looking for a house
           </h1>
           <ul class="main__list">
-            <li class="main__card">
+            <!-- <li class="main__card" id="Katrine">
               <div class="main__img">
                 <img src="../../assets/images/pets-katrine.jpg" alt="Katrine" />
               </div>
               <span class="main__name">Katrine</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card">
+            <li class="main__card" id="Jennifer">
               <div class="main__img">
                 <img
                   src="../../assets/images/pets-jennifer.jpg"
@@ -82,35 +82,35 @@
               <span class="main__name">Jennifer</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card">
+            <li class="main__card" id="Woody">
               <div class="main__img">
                 <img src="../../assets/images/pets-woody.jpg" alt="Woody" />
               </div>
               <span class="main__name">Woody</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card card__hidden-mobile">
+            <li class="main__card card__hidden-mobile" id="Sophia">
               <div class="main__img">
                 <img src="../../assets/images/pets-sophia.jpg" alt="Sophia" />
               </div>
               <span class="main__name">Sophia</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card card__hidden-mobile">
+            <li class="main__card card__hidden-mobile" id="Timmy">
               <div class="main__img">
                 <img src="../../assets/images/pets-timmy.jpg" alt="Timmy" />
               </div>
               <span class="main__name">Timmy</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card card__hidden-mobile">
+            <li class="main__card card__hidden-mobile" id="Charly">
               <div class="main__img">
                 <img src="../../assets/images/pets-charly.jpg" alt="Charly" />
               </div>
               <span class="main__name">Charly</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card card__hidden">
+            <li class="main__card card__hidden" id="Scarlett">
               <div class="main__img">
                 <img
                   src="../../assets/images/pets-scarlett.jpg"
@@ -120,33 +120,59 @@
               <span class="main__name">Scarlett</span>
               <button type="button" class="main__card-btn">Learn more</button>
             </li>
-            <li class="main__card card__hidden">
+            <li class="main__card card__hidden" id="Freddie">
               <div class="main__img">
                 <img src="../../assets/images/pets-freddie.jpg" alt="Freddie" />
               </div>
               <span class="main__name">Freddie</span>
               <button type="button" class="main__card-btn">Learn more</button>
-            </li>
+            </li> -->
           </ul>
+          <div class="modal" style="display: none">
+            <div class="modal__img">
+              <img src="" alt="" />
+            </div>
+            <div class="modal__content">
+              <h3 class="modal__title"></h3>
+              <span class="modal__subtitle"></span>
+              <p class="modal__text"></p>
+              <ul class="modal__list">
+                <li class="modal__item">
+                  <span class="modal__item_property">Age:</span>
+                  <span class="modal__item_value age"></span>
+                </li>
+                <li class="modal__item">
+                  <span class="modal__item_property">Inoculations:</span>
+                  <span class="modal__item_value inculation"></span>
+                </li>
+                <li class="modal__item">
+                  <span class="modal__item_property">Diseases:</span>
+                  <span class="modal__item_value diseases"></span>
+                </li>
+                <li class="modal__item">
+                  <span class="modal__item_property">Parasites:</span>
+                  <span class="modal__item_value parasites"></span>
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="modal__btn_close">
+              <img src="../../assets/icons/close.svg" alt="cross" />
+            </button>
+          </div>
           <div class="main__pagination">
             <button
               type="button"
-              class="main__pagination-item main__pagination-double-prev main__pagination-item-disabled"
+              class="main__pagination-item main__pagination-double-prev"
             >
               &lt; &lt;
             </button>
             <button
               type="button"
-              class="main__pagination-item main__pagination-prev main__pagination-item-disabled"
+              class="main__pagination-item main__pagination-prev"
             >
               &lt;
             </button>
-            <button
-              type="button"
-              class="main__pagination-item main__pagination-num"
-            >
-              1
-            </button>
+            <div class="main__pagination-item main__pagination-num">1</div>
             <button
               type="button"
               class="main__pagination-item main__pagination-next"
@@ -162,6 +188,7 @@
           </div>
         </div>
       </div>
+      <div class="cover"></div>
     </main>
     <footer class="footer" id="footer">
       <div class="container">
@@ -233,6 +260,6 @@
         </div>
       </div>
     </footer>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

@@ -75,6 +75,22 @@
 //
 //
 //
+// @keyframes slide-in {
+//   0% {
+//     transform: right(-320px);
+//   }
+//   100% {
+//     transform: right(0);
+//   }
+// }
+// @keyframes slide-out {
+//   0% {
+//     transform: right(0);
+//   }
+//   100% {
+//     transform: right(-320px);
+//   }
+// }
 @media screen and (max-width: 767px) {
   .logo__mobile {
     display: flex;
@@ -163,8 +179,11 @@
   }
   .nav__hidden {
     right: -320px;
+    // animation: slide-in 0.8s ease;
   }
   .nav__open {
+    // animation: slide-out 0.8s ease;
+
     right: 0;
   }
 }

@@ -103,10 +103,10 @@
     color: #f1cdb3;
   }
   &__img {
-    display: block;
     max-width: 300px;
     max-height: 310px;
     img {
+      display: block;
       width: 100%;
       height: auto;
     }
