@@ -813,7 +813,7 @@ body {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -983,6 +983,7 @@ body {
     margin-right: 9px;
   }
   .modal__content {
+    padding: 11px 0;
     margin-top: 11px;
   }
   .modal__subtitle {
