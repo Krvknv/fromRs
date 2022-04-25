@@ -1,4 +1,5 @@
 .gallery {
+  position: relative;
   background-color: #f6f6f6;
   padding-top: 80px;
   padding-bottom: 100px;
@@ -112,6 +113,116 @@
     }
   }
 }
+.cover {
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  background: #fafafa;
+  border-radius: 9px;
+  display: flex;
+  // padding-right: 20px;
+  // justify-content: space-between;
+  // flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  &__img {
+    max-width: 500px;
+    max-height: 500px;
+    margin-right: 29px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    width: 39%;
+    margin-top: 50px;
+    margin-bottom: 88px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: end;
+  }
+  &__title {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    /* or 45px */
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-bottom: 9px;
+  }
+  &__subtitle {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    /* identical to box height, or 23px */
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    /* or 17px */
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-bottom: 46px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 12px;
+  }
+  &__item {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+  &__item_property {
+    font-weight: 700;
+    color: #000000;
+  }
+  &__item_value {
+    color: #000000;
+  }
+  &__btn_close {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -40px;
+    top: -53px;
+  }
+}
+
 @media screen and (max-width: 1279px) {
   .card-hidden {
     display: none;

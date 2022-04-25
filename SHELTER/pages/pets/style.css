@@ -358,7 +358,7 @@ button {
   border: none;
 }
 
-li {
+li:not(.modal__item) {
   list-style: none;
 }
 
@@ -368,6 +368,7 @@ html {
 
 body {
   background-color: #f6f6f6;
+  overflow-x: hidden;
 }
 
 .container {
@@ -394,6 +395,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 
 .header__wrapper {
@@ -635,6 +637,7 @@ body {
 }
 
 .main {
+  position: relative;
   padding: 81px 0 100px 0;
 }
 
@@ -652,6 +655,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .main__title {
@@ -798,6 +802,151 @@ body {
   cursor: auto;
 }
 
+.cover {
+  display: none;
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  background: #fafafa;
+  border-radius: 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  z-index: 50;
+  display: none;
+}
+
+.modal__img {
+  border-bottom-left-radius: 100px;
+  width: 500px;
+  height: 500px;
+  margin-right: 29px;
+}
+
+.modal__img img {
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  width: 100%;
+  height: auto;
+}
+
+.modal__content {
+  width: 41%;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal__title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  /* or 45px */
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 9px;
+}
+
+.modal__subtitle {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.modal__text {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 46px;
+}
+
+.modal__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.modal__item {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+  list-style: inside;
+}
+
+.modal__item_property {
+  font-weight: 700;
+  color: #000000;
+}
+
+.modal__item_value {
+  color: #000000;
+}
+
+.modal__btn_close {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: -40px;
+  top: -53px;
+  outline: none;
+}
+
 @media screen and (max-width: 1279px) {
   .main {
     padding: 81px 0 78px 0;
@@ -820,6 +969,28 @@ body {
   .card__hidden {
     display: none;
   }
+  .modal {
+    max-width: 630px;
+    height: auto;
+  }
+  .modal__text {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .modal__img {
+    width: 350px;
+    height: 350px;
+    margin-right: 9px;
+  }
+  .modal__content {
+    margin-top: 11px;
+  }
+  .modal__subtitle {
+    margin-bottom: 21px;
+  }
+  .modal__list {
+    gap: 6px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -839,6 +1010,19 @@ body {
   }
   .card__hidden-mobile {
     display: none;
+  }
+  .modal {
+    padding: 10px;
+    max-width: 240px;
+  }
+  .modal__img {
+    display: none;
+  }
+  .modal__content {
+    width: 100%;
+  }
+  .modal__title, .modal__subtitle {
+    text-align: center;
   }
 }
 
@@ -996,12 +1180,12 @@ body {
 }
 
 .footer__img {
-  display: block;
   max-width: 300px;
   max-height: 310px;
 }
 
 .footer__img img {
+  display: block;
   width: 100%;
   height: auto;
 }

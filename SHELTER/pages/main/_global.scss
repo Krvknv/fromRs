@@ -11,7 +11,7 @@ button {
   cursor: pointer;
   border: none;
 }
-li {
+li:not(.modal__item) {
   list-style: none;
 }
 html {
