@@ -29,6 +29,7 @@ function closeMenu(event) {
     nav.classList.add("nav__hidden");
     hamburger.classList.remove("open");
     cover.style.display = "none";
+    logoUsual.style.opacity = "1";
   }
 }
 
@@ -50,49 +51,6 @@ const btnModalClose = document.querySelector(".modal__btn_close");
 
 import pets from "./pets.js";
 
-// function createElement(item) {
-//   let modalWindow = document.createElement("div");
-//   modalWindow.innerHTML = `<div class="modal">
-//               <div class="modal__img">
-//                 <img
-//                   src=${item.img}
-//                   alt=${item.name}
-//                 />
-//               </div>
-//               <div class="modal__content">
-//                 <h3 class="modal__title">${item.name}</h3>
-//                 <span class="modal__subtitle">${item.type} - ${
-//     item.breed
-//   }</span>
-//                 <p class="modal__text">${item.description}</p>
-//                 <ul class="modal__list">
-//                   <li class="modal__item">
-//                     <span class="modal__item_property">Age:</span>
-//                     <span class="modal__item_value">${item.age}</span>
-//                   </li>
-//                   <li class="modal__item">
-//                     <span class="modal__item_property">Inoculations:</span>
-//                     <span class="modal__item_value">${item.inoculations.join(
-//                       ", "
-//                     )}</span>
-//                   </li>
-//                   <li class="modal__item">
-//                     <span class="modal__item_property">Diseases:</span>
-//                     <span class="modal__item_value">${item.diseases.join(
-//                       ", "
-//                     )}</span>
-//                   </li>
-//                   <li class="modal__item">
-//                     <span class="modal__item_property">Parasites:</span>
-//                     <span class="modal__item_value">${item.parasites.join(
-//                       ", "
-//                     )}</span>
-//                   </li>
-//                 </ul>
-//               </div>
-//                             </div>`;
-//   return modalWindow;
-// }
 const modalImg = document.querySelector(".modal__img img");
 const modalTitle = document.querySelector(".modal__title");
 const modalSubTitle = document.querySelector(".modal__subtitle");
