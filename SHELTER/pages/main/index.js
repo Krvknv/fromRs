@@ -100,22 +100,23 @@ btnSliderNextMobile.addEventListener("click", renderCards);
 btnSliderPrevMobile.addEventListener("click", renderCards);
 
 btnSliderNext.addEventListener("click", () => {
-  list.classList.add("animation");
+  list.classList.add("animationnext");
 });
 btnSliderPrev.addEventListener("click", () => {
-  list.classList.add("animation");
+  list.classList.add("animationprev");
 });
 btnSliderNextMobile.addEventListener("click", () => {
-  list.classList.add("animation");
+  list.classList.add("animationnext");
 });
 btnSliderPrevMobile.addEventListener("click", () => {
-  list.classList.add("animation");
+  list.classList.add("animationprev");
 });
 
 list.addEventListener(
   "animationend",
   () => {
-    list.classList.remove("animation");
+    list.classList.remove("animationnext");
+    list.classList.remove("animationprev");
   },
   false
 );
