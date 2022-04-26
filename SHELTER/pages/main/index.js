@@ -14,12 +14,14 @@ function toggleMenu() {
     hamburger.classList.add("open");
     cover.style.display = "flex";
     logoUsual.style.opacity = "0";
+    document.body.style.overflow = "hidden";
   } else {
     nav.classList.remove("nav__open");
     nav.classList.add("nav__hidden");
     hamburger.classList.remove("open");
     cover.style.display = "none";
     logoUsual.style.opacity = "1";
+    document.body.style.overflow = " ";
   }
 }
 
@@ -30,6 +32,7 @@ function closeMenu(event) {
     hamburger.classList.remove("open");
     cover.style.display = "none";
     logoUsual.style.opacity = "1";
+    document.body.style.overflow = " ";
   }
 }
 //
