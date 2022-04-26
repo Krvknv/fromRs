@@ -972,6 +972,8 @@ body {
           align-items: center;
   height: 435px;
   cursor: pointer;
+  -webkit-transition: all 10s ease-in-out;
+  transition: all 10s ease-in-out;
 }
 
 .gallery__card:hover {
@@ -1295,6 +1297,37 @@ body {
   .modal__title, .modal__subtitle {
     text-align: center;
   }
+}
+
+@-webkit-keyframes slider {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(100px, 0);
+            transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(100px, 0);
+            transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+.animation {
+  -webkit-animation: slider 0.8s linear;
+          animation: slider 0.8s linear;
 }
 
 .help {

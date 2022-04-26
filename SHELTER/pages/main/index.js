@@ -36,7 +36,6 @@ function closeMenu(event) {
 //
 //
 // Make slider
-// import pets from "./pets.js";
 const btnSliderPrev = document.querySelector(".btn-prev");
 const btnSliderNext = document.querySelector(".btn-next");
 const btnSliderPrevMobile = document.querySelector(".btn-mobile-prev");
@@ -44,6 +43,7 @@ const btnSliderNextMobile = document.querySelector(".btn-mobile-next");
 const cardName = document.querySelectorAll(".gallery__name");
 const cardImage = document.querySelectorAll(".gallery__img img");
 const cardsList = document.querySelectorAll(".gallery__card");
+const list = document.querySelector(".gallery__list");
 
 let width = document.documentElement.clientWidth;
 
@@ -84,46 +84,46 @@ function renderCards() {
     cardImage[i].src = `${element.img}`;
     cardImage[i].alt = `${element.name}`;
     cardsList[i].id = `${element.name}`;
+    // list.classList.add("animation");
   });
+  console.log(list.style.opacity, typeof list.style.opacity);
+  if (list.style.opacity === "1") {
+    list.classList.remove("animation");
+  }
 }
 
 renderCards();
+
 btnSliderNext.addEventListener("click", renderCards);
 btnSliderPrev.addEventListener("click", renderCards);
 btnSliderNextMobile.addEventListener("click", renderCards);
 btnSliderPrevMobile.addEventListener("click", renderCards);
-// let shownCards = [];
-// function chooseCards() {
-//   let result = [];
-//   let cardsQuantity = countCards();
-//   pets.forEach((item) => {
-//     if (result.length < cardsQuantity) {
-//       if (!shownCards.find((elem) => elem.name === item.name)) {
-//         result.push(item);
-//         shownCards.push(item);
-//       }
-//     }
-//   });
-//   if (shownCards.length > cardsQuantity) {
-//     shownCards.splice(0, cardsQuantity);
-//   }
-//   return result;
-// }
-// function renderCards() {
-//   let arrCard = chooseCards();
-//   arrCard.forEach((item, index) => {
-//     cardName[index].innerHTML = `${item.name}`;
-//     cardImage[index].src = `${item.img}`;
-//     cardImage[index].alt = `${item.name}`;
-//   });
-// }
 
-// console.log(width);
-// console.log(countCards());
+btnSliderNext.addEventListener("click", () => {
+  list.classList.add("animation");
+});
+btnSliderPrev.addEventListener("click", () => {
+  list.classList.add("animation");
+});
+btnSliderNextMobile.addEventListener("click", () => {
+  list.classList.add("animation");
+});
+btnSliderPrevMobile.addEventListener("click", () => {
+  list.classList.add("animation");
+});
+
+list.addEventListener(
+  "animationend",
+  () => {
+    list.classList.remove("animation");
+  },
+  false
+);
+
 //
 //
 //
-// events
+// events for menu
 hamburger.addEventListener("click", toggleMenu);
 nav.addEventListener("click", closeMenu);
 cover.addEventListener("click", function () {
@@ -156,8 +156,6 @@ function closeModalWindow() {
   modalWindow.style.display = "none";
   header.style.display = "block";
 }
-// let centerX = document.documentElement.clientWidth / 2;
-// let centerY = document.documentElement.clientHeight / 2;
 
 function renderModal(event) {
   pets.forEach((item) => {
@@ -181,7 +179,6 @@ function renderModal(event) {
     }
   });
 }
-// cards.forEach((item) => item.addEventListener("click", renderModal));
 
 btnModalClose.addEventListener("click", closeModalWindow);
 coverModal.addEventListener("click", closeModalWindow);

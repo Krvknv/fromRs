@@ -53,6 +53,8 @@
     align-items: center;
     height: 435px;
     cursor: pointer;
+    transition: all 10s ease-in-out;
+
     &:hover {
       background-color: #fff;
       .gallery__card-btn {
@@ -333,4 +335,18 @@
       text-align: center;
     }
   }
+}
+@keyframes slider {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animation {
+  animation: slider 0.8s linear;
 }
