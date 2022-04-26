@@ -1299,7 +1299,7 @@ body {
   }
 }
 
-@-webkit-keyframes slider {
+@-webkit-keyframes slidernext {
   0% {
     opacity: 0;
     -webkit-transform: translate(100px, 0);
@@ -1312,7 +1312,7 @@ body {
   }
 }
 
-@keyframes slider {
+@keyframes slidernext {
   0% {
     opacity: 0;
     -webkit-transform: translate(100px, 0);
@@ -1325,9 +1325,40 @@ body {
   }
 }
 
-.animation {
-  -webkit-animation: slider 0.8s linear;
-          animation: slider 0.8s linear;
+.animationnext {
+  -webkit-animation: slidernext 0.8s linear;
+          animation: slidernext 0.8s linear;
+}
+
+@-webkit-keyframes sliderprev {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-100px, 0);
+            transform: translate(-100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes sliderprev {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-100px, 0);
+            transform: translate(-100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+.animationprev {
+  -webkit-animation: sliderprev 0.8s linear;
+          animation: sliderprev 0.8s linear;
 }
 
 .help {

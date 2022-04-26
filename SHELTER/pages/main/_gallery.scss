@@ -336,7 +336,7 @@
     }
   }
 }
-@keyframes slider {
+@keyframes slidernext {
   0% {
     opacity: 0;
     transform: translate(100px, 0);
@@ -347,6 +347,20 @@
     transform: translate(0, 0);
   }
 }
-.animation {
-  animation: slider 0.8s linear;
+.animationnext {
+  animation: slidernext 0.8s linear;
+}
+@keyframes sliderprev {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animationprev {
+  animation: sliderprev 0.8s linear;
 }
