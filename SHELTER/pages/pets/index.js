@@ -168,7 +168,18 @@ function createElements(item) {
             `;
   return div;
 }
-
+function countPages(cards) {
+  if (cards === 8) {
+    return 6;
+  }
+  if (cards === 6) {
+    return 8;
+  }
+  if (cards === 3) {
+    return 16;
+  }
+}
+// countPages(countCardsPages());
 function renderCardList(obj, pageNumber) {
   let arrCards = obj[pageNumber];
   // console.log(typeof pageNumber);
@@ -183,7 +194,7 @@ function renderCardList(obj, pageNumber) {
     btnDoublePrev.removeAttribute("disabled");
     btnPrev.removeAttribute("disabled");
   }
-  if (+pageNumber === 6) {
+  if (+pageNumber === countPages(countCardsPages())) {
     btnDoubleNext.classList.add("main__pagination-item-disabled");
     btnNext.classList.add("main__pagination-item-disabled");
     btnDoubleNext.setAttribute("disabled", "disabled");
@@ -210,7 +221,7 @@ function changePage(numberPage) {
   renderCardList(shaffledArray, numberPage);
 }
 btnDoubleNext.addEventListener("click", () => {
-  changePage(6);
+  changePage(countPages(countCardsPages()));
 });
 btnNext.addEventListener("click", () => {
   changePage(+pageNumberDiv.innerHTML + 1);
