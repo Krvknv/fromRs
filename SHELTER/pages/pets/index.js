@@ -35,6 +35,13 @@ function closeMenu(event) {
 
 hamburger.addEventListener("click", toggleMenu);
 nav.addEventListener("click", closeMenu);
+cover.addEventListener("click", function () {
+  nav.classList.remove("nav__open");
+  nav.classList.add("nav__hidden");
+  hamburger.classList.remove("open");
+  cover.style.display = "none";
+  logoUsual.style.opacity = "1";
+});
 //
 //
 //
