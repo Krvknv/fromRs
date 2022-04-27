@@ -96,7 +96,7 @@ function renderModal(event) {
       inoculations.innerHTML = `${item.inoculations.join(",")}`;
       diseases.innerHTML = `${item.diseases.join(",")}`;
       parasites.innerHTML = `${item.parasites.join(",")}`;
-      window.scrollTo(modalWindow.offsetLeft, modalWindow.offsetTop - 250);
+      // window.scrollTo(modalWindow.offsetLeft, modalWindow.offsetTop - 250);
       // console.log(modalWindow.offsetLeft);
       // console.log(modalWindow.offsetTop);
     }
