@@ -136,6 +136,7 @@ cover.addEventListener("click", function () {
   hamburger.classList.remove("open");
   cover.style.display = "none";
   logoUsual.style.opacity = "1";
+  document.body.style.overflow = " ";
 });
 // Make modal windows
 const modalWindow = document.querySelector(".modal");
