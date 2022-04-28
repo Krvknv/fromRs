@@ -75,6 +75,7 @@ function closeModalWindow() {
   coverModal.style.display = "none";
   modalWindow.style.display = "none";
   header.style.display = "block";
+  document.body.style.overflow = " ";
 }
 // let centerX = document.documentElement.clientWidth / 2;
 // let centerY = document.documentElement.clientHeight / 2;
