@@ -1,18 +1,22 @@
 import './news.css';
+import { TArticle } from '../../../types/index';
 
-class News {
-    draw(data) {
+interface INews {
+    draw(data: TArticle[]): void;
+}
+
+class News implements INews {
+    draw(data: TArticle[]) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
-
         const fragment = document.createDocumentFragment();
-        const newsItemTemp = document.querySelector('#newsItemTemp');
+        const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
         news.forEach((item, idx) => {
-            const newsClone = newsItemTemp.content.cloneNode(true);
+            const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
 
             if (idx % 2) newsClone.querySelector('.news__item').classList.add('alt');
 
-            newsClone.querySelector('.news__meta-photo').style.backgroundImage = `url(${
+            (newsClone.querySelector('.news__meta-photo') as HTMLDivElement).style.backgroundImage = `url(${
                 item.urlToImage || 'img/news_placeholder.jpg'
             })`;
             newsClone.querySelector('.news__meta-author').textContent = item.author || item.source.name;
