@@ -1,7 +1,8 @@
-type TCallback<T> = (data: T) => void;
+export type TCallback<T> = (data: T) => void;
+
 type TOptions = {
     endpoint: string;
-    options: { [key: string]: string };
+    options?: { [key: string]: string };
 };
 class Loader {
     baseLink: string;

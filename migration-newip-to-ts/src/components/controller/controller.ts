@@ -1,7 +1,10 @@
 import AppLoader from './appLoader';
+import { TCallback } from './loader';
+import { TDrawSources } from '../view/appView';
+import { TDrawNewsData } from '../view/appView';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback: TCallback<TDrawSources>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,9 +13,9 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e, callback) {
-        let target = e.target;
-        const newsContainer = e.currentTarget;
+    getNews(e: Event, callback: TCallback<TDrawNewsData>): void {
+        let target = e.target as HTMLElement;
+        const newsContainer = e.currentTarget as HTMLElement;
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
@@ -31,7 +34,7 @@ class AppController extends AppLoader {
                 }
                 return;
             }
-            target = target.parentNode;
+            target = target.parentNode as HTMLElement;
         }
     }
 }

@@ -9,13 +9,13 @@ interface IAppView {
     drawNews(data: TDrawNewsData): void;
     drawSources(data: TDrawSources): void;
 }
-type TDrawNewsData = {
+export type TDrawNewsData = {
     articles: TArticle[];
     status: string;
     totalResults: number;
 };
 
-type TDrawSources = {
+export type TDrawSources = {
     status: string;
     sources: TSources[];
 };
