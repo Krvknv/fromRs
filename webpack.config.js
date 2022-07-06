@@ -3,24 +3,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { merge } = require("webpack-merge");
 
 module.exports = {
-  entry: "./src/scripts/index",
+  entry: path.resolve(__dirname, "./src/index"),
   output: {
-    filename: "[hash][name].js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
+    path: path.resolve(__dirname, "./dist"),
     clean: true,
   },
   mode: "development",
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Online shop",
       filename: "index.html",
       template: "src/index.html",
     }),
-    new EslingPlugin({ extensions: "ts" }),
-    new FaviconsWebpackPlugin("src/assets/image/icons/favicon.ico"),
+    new ESLintPlugin({ extensions: "ts" }),
+    // new FaviconsWebpackPlugin("src/assets/image/icons/favicon.ico"),
   ],
   module: {
     rules: [
@@ -43,8 +43,7 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    static: "./dist",
-    port: 3000,
+  resolve: {
+    extensions: [".js", ".ts"],
   },
 };
