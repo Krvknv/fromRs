@@ -1,0 +1,73 @@
+.header {
+    font-family: 'Cinzel', serif;
+
+    &__main {
+        display: flex;
+        color: $main-font-color;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
+
+.logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.nav__item,
+.section__item {
+    list-style: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav__list {
+    display: flex;
+    gap: 53px;
+}
+
+.nav__item:hover {
+    color: $main-color;
+}
+
+.basket {
+    width: 30px;
+    height: 30px;
+    background-image: url('../image/icons/basket.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    &:hover {
+        background-image: url('../image/icons/basket-hover.svg');
+    }
+}
+
+.section {
+    background-color: $main-color;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    &__list {
+        color: $additional-font-color;
+        gap: 139px;
+        margin: 0 auto;
+        display: flex;
+        & .section__item:last-child .section__search {
+            background-image: url('../image/icons/search.svg');
+            width: 16px;
+            height: 16px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: none;
+            &:hover {
+                background-image: url('../image/icons/search-hover.svg');
+            }
+        }
+    }
+}
+
+.section__item:hover {
+    color: $main-font-color;
+}
