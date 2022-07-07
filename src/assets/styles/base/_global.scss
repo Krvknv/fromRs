@@ -13,6 +13,14 @@ button {
     border: none;
 }
 
+#slider-year,
+#slider-quantity,
+.noUi-connect,
+label,
+input {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: inherit;
