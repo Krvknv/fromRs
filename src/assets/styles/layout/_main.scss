@@ -1,0 +1,45 @@
+.main {
+    padding: 30px 0 100px;
+}
+
+.crumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 4px;
+    * {
+        font-size: 12px;
+
+        color: $main-font-color;
+        text-transform: capitalize;
+    }
+    &__separator {
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-radius: 100%;
+        background-color: $main-font-color;
+    }
+    &__current {
+        opacity: 0.5;
+    }
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 7px;
+    position: relative;
+    margin-bottom: 35px;
+    &::after {
+        content: '(12)';
+        font-size: 12px;
+        opacity: 0.5;
+        position: absolute;
+        top: 5px;
+    }
+}

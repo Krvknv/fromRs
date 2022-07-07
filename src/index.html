@@ -10,7 +10,8 @@
         <header class="header">
             <div class="container">
                 <div class="header__main">
-                    <span class="logo">monica</span>
+                    <a href="#"> <h1 class="logo">monica</h1></a>
+
                     <nav class="nav">
                         <ul class="nav__list">
                             <li class="nav__item"><a href="#">find store</a></li>
@@ -37,5 +38,78 @@
                 </ul>
             </div>
         </header>
+        <main class="main">
+            <div class="container">
+                <div class="crumbs">
+                    <a href="#" class="crumbs__prev">home</a>
+                    <span class="crumbs__separator"></span>
+                    <a href="#" class="crumbs__current">earrings</a>
+                </div>
+                <h2 class="title">earrings</h2>
+                <aside class="aside">
+                    <div class="category category__collection">
+                        <h3 class="category-name">collection</h3>
+                        <form class="category__form">
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />timeless elegance
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />back to school
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />milan
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />portugal
+                            </label>
+                        </form>
+                    </div>
+                    <div class="category category__metal">
+                        <h3 class="category-name">metal</h3>
+                        <form class="category__form">
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />gold
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />silver
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />two tones
+                            </label>
+                        </form>
+                    </div>
+                    <div class="category category__color">
+                        <h3 class="category-name">color</h3>
+                        <form class="category__form">
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />gold
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />grey
+                            </label>
+                            <label class="category__label">
+                                <input class="category__input" type="checkbox" name="" />pink
+                            </label>
+                        </form>
+                    </div>
+                    <div class="sort">
+                        <h3 class="category-name">sort</h3>
+                        <select class="sort__select">
+                            <option class="sort__option" selected>Sort by name(from a to z)</option>
+                            <option class="sort__option">Sort by name(from z to a)</option>
+                            <option class="sort__option">Sort by year(in ascending order)</option>
+                            <option class="sort__option">Sort by year(in descending order)</option>
+                        </select>
+                    </div>
+                    <div class="filter">
+                        <h3 class="category-name">filtering by year</h3>
+                        <div id="slider-year"></div>
+                        <h3 class="category-name">filtering by quantity</h3>
+                        <div id="slider-quantity"></div>
+                    </div>
+                    <button class="btn-reset">reset</button>
+                </aside>
+            </div>
+        </main>
     </body>
 </html>

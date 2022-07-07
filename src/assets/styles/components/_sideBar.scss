@@ -1,0 +1,66 @@
+.category {
+    margin-bottom: 30px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    &__label {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: capitalize;
+    }
+    &__input {
+        margin-right: 8px;
+    }
+}
+.category-name {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 194px;
+    border-bottom: 1px solid rgba(29, 25, 38, 0.5);
+}
+.sort {
+    margin-bottom: 20px;
+}
+.sort__select {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: capitalize;
+}
+
+#slider-year,
+#slider-quantity {
+    width: 200px;
+    height: 15px;
+    margin-bottom: 20px;
+}
+#slider-quantity {
+    margin-bottom: 50px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 30px !important;
+    height: 23px !important;
+    right: -17px !important;
+    top: -5px !important;
+}
+
+.noUi-connect {
+    background: $main-color !important;
+}
+
+.btn-reset {
+    width: 200px;
+    height: 50px;
+    background-color: $main-color;
+    color: $additional-font-color;
+    border-radius: 100px;
+    text-transform: capitalize;
+    &:hover {
+        background-color: darken($main-color, 10%);
+    }
+}
