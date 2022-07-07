@@ -53,17 +53,32 @@
         gap: 139px;
         margin: 0 auto;
         display: flex;
-        & .section__item:last-child .section__search {
-            background-image: url('../image/icons/search.svg');
-            width: 16px;
-            height: 16px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-color: transparent;
-            border: none;
-            &:hover {
-                background-image: url('../image/icons/search-hover.svg');
-            }
+        align-items: center;
+    }
+}
+.search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    &__input {
+        height: 30px;
+        width: 200px;
+        border: none;
+        outline: none;
+        border-radius: 100px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    &__btn {
+        background-image: url('../image/icons/search.svg');
+        width: 16px;
+        height: 16px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        &:hover {
+            background-image: url('../image/icons/search-hover.svg');
         }
     }
 }
