@@ -1,0 +1,23 @@
+.footer {
+    background-color: $main-color;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.date {
+    opacity: 0.5;
+}
+.course-img {
+    width: 100px;
+    height: 37px;
+}
+.footer__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.author,
+.date {
+    font-family: 'Cinzel', serif;
+}

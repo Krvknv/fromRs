@@ -1,8 +1,9 @@
-@import 'base/fonts';
-@import 'base//global';
 @import 'base/normalize';
 @import 'abstract/variables';
+@import 'base/fonts';
+@import 'base//global';
 @import 'layout/header';
 @import 'layout/main';
 @import 'components/sideBar';
 @import 'components/card';
+@import 'layout/footer';
