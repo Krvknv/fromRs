@@ -43,8 +43,14 @@
     &:hover {
         background-image: url('../image/icons/basket-hover.svg');
     }
-    &::after {
-        content: '0';
+    // &::after {
+    //     content: '0';
+    //     position: absolute;
+    //     color: $main-color;
+    //     top: -9px;
+    //     right: 0;
+    // }
+    &__num {
         position: absolute;
         color: $main-color;
         top: -9px;

@@ -6,8 +6,7 @@
     align-items: center;
     position: relative;
     border: 1px solid rgba(29, 25, 38, 0.5);
-    &::before {
-        content: 'popular';
+    &__popular {
         position: absolute;
         top: 5px;
         left: 5px;
