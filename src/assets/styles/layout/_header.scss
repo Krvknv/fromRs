@@ -39,8 +39,16 @@
     background-image: url('../image/icons/basket.svg');
     background-position: center center;
     background-repeat: no-repeat;
+    position: relative;
     &:hover {
         background-image: url('../image/icons/basket-hover.svg');
+    }
+    &::after {
+        content: '0';
+        position: absolute;
+        color: $main-color;
+        top: -9px;
+        right: 0;
     }
 }
 
