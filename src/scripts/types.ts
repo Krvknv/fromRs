@@ -7,4 +7,5 @@ export type itemType = {
     price: number;
     ispopular: boolean;
     img: string;
+    id: number;
 };

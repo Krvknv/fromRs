@@ -8,6 +8,7 @@ export const itemArr = [
         price: 160,
         ispopular: true,
         img: '../../src/assets/image/img/earrings1.jpg',
+        id: 1,
     },
     {
         collection: 'Timeless Elegance',
@@ -18,6 +19,7 @@ export const itemArr = [
         price: 120,
         ispopular: false,
         img: '.../../src/assets/image/img/earrings2.jpg',
+        id: 2,
     },
     {
         collection: 'Milan',
@@ -28,6 +30,7 @@ export const itemArr = [
         price: 210,
         ispopular: false,
         img: '../../src/assets/image/img/earrings3.jpg',
+        id: 3,
     },
     {
         collection: 'Portugal',
@@ -38,6 +41,7 @@ export const itemArr = [
         price: 185,
         ispopular: false,
         img: '../../src/assets/image/img/earrings4.jpg',
+        id: 4,
     },
     {
         collection: 'Portugal',
@@ -48,6 +52,7 @@ export const itemArr = [
         price: 185,
         ispopular: true,
         img: '../../src/assets/image/img/earrings5.jpg',
+        id: 5,
     },
     {
         collection: 'Back To School',
@@ -58,6 +63,7 @@ export const itemArr = [
         price: 130,
         ispopular: true,
         img: '../../src/assets/image/img/earrings6.jpg',
+        id: 6,
     },
     {
         collection: 'Milan',
@@ -68,6 +74,7 @@ export const itemArr = [
         price: 155,
         ispopular: false,
         img: '../../src/assets/image/img/earrings7.jpg',
+        id: 7,
     },
     {
         collection: 'Portugal',
@@ -78,6 +85,7 @@ export const itemArr = [
         price: 105,
         ispopular: false,
         img: '../../src/assets/image/img/earrings8.jpg',
+        id: 8,
     },
     {
         collection: 'Back To School',
@@ -88,6 +96,7 @@ export const itemArr = [
         price: 85,
         ispopular: true,
         img: '../../src/assets/image/img/earrings9.jpg',
+        id: 9,
     },
     {
         collection: 'Timeless Elegance',
@@ -98,6 +107,7 @@ export const itemArr = [
         price: 125,
         ispopular: false,
         img: '../../src/assets/image/img/earrings10.jpg',
+        id: 10,
     },
     {
         collection: 'Timeless Elegance',
@@ -108,6 +118,7 @@ export const itemArr = [
         price: 200,
         ispopular: false,
         img: '../../src/assets/image/img/earrings11.jpg',
+        id: 11,
     },
     {
         collection: 'Portugal',
@@ -118,5 +129,6 @@ export const itemArr = [
         price: 260,
         ispopular: true,
         img: '../../src/assets/image/img/earrings12.jpg',
+        id: 12,
     },
 ];

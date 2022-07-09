@@ -3,6 +3,8 @@ import { itemType } from './types';
 
 const cards = document.querySelector('.cards');
 
+const inBasket = JSON.parse(localStorage.getItem('inBasket')) || [];
+
 function createCard(item: itemType) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -31,7 +33,9 @@ function createCard(item: itemType) {
     </li>
 </ul>
 <span class="card__price">${item.price}$</span>
-<button class="btn-add btn">add to basket</button>
+<button id=${item.id} class="btn-add btn">${
+        inBasket.includes(item.id) ? 'remove from basket' : 'add to basket'
+    }</button>
     `;
     return card;
 }
