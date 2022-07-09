@@ -8,6 +8,8 @@ const inBasket = JSON.parse(localStorage.getItem('inBasket')) || [];
 function createCard(item: itemType) {
     const card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('data-year', `${item.year}`);
+    card.setAttribute('data-collection', `${item.collection}`);
     card.innerHTML = `
     <span class="card__popular">${item.ispopular ? 'popular' : ''}</span>
     <div class="card__img">
@@ -16,19 +18,19 @@ function createCard(item: itemType) {
 <span class="card__title">${item.collection}</span>
 <ul class="card__list">
     <li class="card__item">
-        <span class="card__prop">year</span>
+        <span class="card__prop card__prop-year">year</span>
         <span class="card__value">${item.year}</span>
     </li>
     <li class="card__item">
-        <span class="card__prop">color</span>
+        <span class="card__prop card__prop-color">color</span>
         <span class="card__value">${item.color}</span>
     </li>
     <li class="card__item">
-        <span class="card__prop">metal</span>
+        <span class="card__prop card__prop-matal">metal</span>
         <span class="card__value">${item.metal}</span>
     </li>
     <li class="card__item">
-        <span class="card__prop">quantity</span>
+        <span class="card__prop card__prop-quality">quantity</span>
         <span class="card__value">${item.quantity}</span>
     </li>
 </ul>
