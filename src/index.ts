@@ -1,35 +1,21 @@
 import './assets/styles/main.scss';
 import './assets/styles/style.css';
 
-import * as noUiSlider from 'nouislider';
-import 'nouislider/dist/nouislider.css';
 import { renderCard } from './scripts/createCards';
+
+import * as noUiSlider from 'nouislider';
 
 import { changeBasket } from './scripts/changeQuantityInBasket';
 
-const sliderYear = document.getElementById('slider-year');
-const sliderQuantity = document.getElementById('slider-quantity');
+import { filterCards } from './scripts/filterCards';
+import { filters } from './scripts/filterCards';
 
 const cards = document.querySelector('.cards');
 
 const select = document.querySelector('.sort__select');
 
-noUiSlider.create(sliderYear, {
-    start: [20, 80],
-    connect: true,
-    range: {
-        min: 0,
-        max: 100,
-    },
-});
-noUiSlider.create(sliderQuantity, {
-    start: [20, 80],
-    connect: true,
-    range: {
-        min: 0,
-        max: 100,
-    },
-});
+const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
+const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
 
 renderCard();
 
@@ -39,3 +25,17 @@ cards.addEventListener('click', changeBasket);
 
 sortCard(null, localStorage.getItem('sort'));
 select.addEventListener('change', sortCard);
+
+sliderYear.noUiSlider.on('set', function (values, handle, unencoded, tap, positions, noUiSlider) {
+    filters.minYear = unencoded[0];
+    filters.maxYear = unencoded[1];
+    filterCards();
+});
+
+sliderPrice.noUiSlider.on('set', function (values, handle, unencoded, tap, positions, noUiSlider) {
+    filters.minPrice = unencoded[0];
+    filters.maxPrice = unencoded[1];
+    filterCards();
+});
+
+filterCards();

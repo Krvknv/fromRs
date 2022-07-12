@@ -20,7 +20,7 @@ module.exports = {
             template: 'src/index.html',
         }),
         new ESLintPlugin({ extensions: 'ts' }),
-        new FaviconsWebpackPlugin('src/assets/image/icons/favicon.ico'),
+        new FaviconsWebpackPlugin('src/assets/image/icons/favicon.svg'),
     ],
     module: {
         rules: [

@@ -5,11 +5,12 @@ const cards = document.querySelector('.cards');
 
 const inBasket = JSON.parse(localStorage.getItem('inBasket')) || [];
 
-function createCard(item: itemType) {
+export function createCard(item: itemType) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('data-year', `${item.year}`);
     card.setAttribute('data-collection', `${item.collection}`);
+    card.setAttribute('data-price', `${item.price}`);
     card.innerHTML = `
     <span class="card__popular">${item.ispopular ? 'popular' : ''}</span>
     <div class="card__img">
@@ -41,9 +42,15 @@ function createCard(item: itemType) {
     `;
     return card;
 }
-
+// console.log(JSON.parse(localStorage.getItem('filteredCards')));
 export function renderCard() {
-    for (const item of itemArr) {
+    let arr;
+    if (JSON.parse(localStorage.getItem('filteredCards'))) {
+        arr = JSON.parse(localStorage.getItem('filteredCards'));
+    } else {
+        arr = itemArr;
+    }
+    for (const item of arr) {
         const card = createCard(item);
         cards.append(card);
     }

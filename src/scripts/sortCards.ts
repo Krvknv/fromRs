@@ -1,9 +1,14 @@
 const cards = document.querySelector('.cards');
+import { itemType } from './types';
+import { itemArr } from './itemArr';
+import { createCard } from './createCards';
 const select = document.querySelector('.sort__select');
 const options = document.querySelectorAll('.sort__option');
 const cardsArr = Array.from(document.querySelectorAll('.card'));
+import { filterCards } from './filterCards';
 
 export function sortCard(event: Event, sort?: string) {
+    const arr = itemArr;
     let value: string;
     if (!sort) {
         value = (select as HTMLSelectElement).value;
@@ -20,32 +25,50 @@ export function sortCard(event: Event, sort?: string) {
 
     switch (value) {
         case 'Sort by name(from a to z)':
-            cardsArr.sort(
-                (a, b) =>
-                    (a as HTMLElement).dataset.collection.charCodeAt(0) -
-                    (b as HTMLElement).dataset.collection.charCodeAt(0)
-            );
+            arr.sort((a: itemType, b: itemType) => a.collection.charCodeAt(0) - b.collection.charCodeAt(0));
             cards.innerHTML = null;
-            cardsArr.forEach((item) => cards.appendChild(item));
+            for (const item of arr) {
+                const card = createCard(item);
+                cards.append(card);
+            }
+            localStorage.setItem('sortedCards', JSON.stringify(arr));
+            filterCards();
+
             break;
         case 'Sort by name(from z to a)':
-            cardsArr.sort(
-                (a, b) =>
-                    (b as HTMLElement).dataset.collection.charCodeAt(0) -
-                    (a as HTMLElement).dataset.collection.charCodeAt(0)
-            );
+            arr.sort((a: itemType, b: itemType) => b.collection.charCodeAt(0) - a.collection.charCodeAt(0));
             cards.innerHTML = null;
-            cardsArr.forEach((item) => cards.appendChild(item));
+            for (const item of arr) {
+                const card = createCard(item);
+                cards.append(card);
+            }
+
+            localStorage.setItem('sortedCards', JSON.stringify(arr));
+            filterCards();
             break;
         case 'Sort by year(in ascending order)':
-            cardsArr.sort((a, b) => +(a as HTMLElement).dataset.year - +(b as HTMLElement).dataset.year);
+            arr.sort((a: itemType, b: itemType) => a.year - b.year);
             cards.innerHTML = null;
-            cardsArr.forEach((item) => cards.appendChild(item));
+            for (const item of arr) {
+                const card = createCard(item);
+                cards.append(card);
+            }
+
+            localStorage.setItem('sortedCards', JSON.stringify(arr));
+            filterCards();
+
             break;
         case 'Sort by year(in descending order)':
-            cardsArr.sort((a, b) => +(b as HTMLElement).dataset.year - +(a as HTMLElement).dataset.year);
+            arr.sort((a: itemType, b: itemType) => b.year - a.year);
             cards.innerHTML = null;
-            cardsArr.forEach((item) => cards.appendChild(item));
+            for (const item of arr) {
+                const card = createCard(item);
+                cards.append(card);
+            }
+
+            localStorage.setItem('sortedCards', JSON.stringify(arr));
+            filterCards();
+
             break;
     }
 }

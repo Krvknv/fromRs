@@ -37,27 +37,54 @@
     line-height: 15px;
     text-transform: capitalize;
 }
-
+.filter-name {
+    margin-bottom: 50px;
+}
 #slider-year,
-#slider-quantity {
+#slider-price {
     width: 200px;
     height: 15px;
     margin-bottom: 20px;
+    position: relative;
 }
-#slider-quantity {
+#slider-price {
     margin-bottom: 50px;
 }
 .noUi-horizontal .noUi-handle {
-    width: 30px !important;
-    height: 23px !important;
+    width: 25px !important;
+    height: 25px !important;
     right: -17px !important;
     top: -5px !important;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.noUi-handle:before,
+.noUi-handle::after {
+    display: none !important;
 }
 
 .noUi-connect {
     background: $main-color !important;
 }
 
+.year-start,
+.year-end,
+.price-start,
+.price-end {
+    position: relative;
+}
+.year-start,
+.year-end {
+    top: -65px;
+}
+.year-end,
+.price-end {
+    left: 185px;
+}
+.price-start,
+.price-end {
+    top: -95px;
+}
 .btn {
     width: 200px;
     height: 50px;
