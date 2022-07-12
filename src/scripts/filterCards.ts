@@ -85,11 +85,14 @@ export function filterCards() {
             filteredCards.add(item);
         }
     }
-
-    localStorage.setItem('filteredCards', JSON.stringify(Array.from(filteredCards)));
-    cards.innerHTML = null;
-    for (const item of filteredCards) {
-        const card = createCard(item as itemType);
-        cards.append(card);
+    if (filteredCards.size === 0) {
+        cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
+    } else {
+        localStorage.setItem('filteredCards', JSON.stringify(Array.from(filteredCards)));
+        cards.innerHTML = null;
+        for (const item of filteredCards) {
+            const card = createCard(item as itemType);
+            cards.append(card);
+        }
     }
 }
