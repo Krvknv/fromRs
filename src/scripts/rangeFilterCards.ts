@@ -2,7 +2,7 @@ import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import { createCard } from './createCards';
 import { itemType } from './types';
-import { chooseFilteredCardsCollection } from './filterCards';
+import { chooseFilteredCards } from './filterCards';
 import { itemArr } from './itemArr';
 const cards = document.querySelector('.cards');
 
@@ -97,7 +97,7 @@ export function filterCards() {
             const card = createCard(item as itemType);
             cards.append(card);
         }
-        chooseFilteredCardsCollection();
+        chooseFilteredCards();
         // chooseFilteredCardsMetal();
     }
 }

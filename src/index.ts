@@ -11,7 +11,7 @@ import { filterCards, rangeFilters } from './scripts/rangeFilterCards';
 
 import {
     chooseFilter,
-    chooseFilteredCardsCollection,
+    chooseFilteredCards,
     // chooseFilteredCardsMetal,
     showChosenFiltersMetal,
     showChosenFiltersColor,
@@ -113,7 +113,7 @@ formColor.forEach((item) =>
 import { filters } from './scripts/filterCards';
 console.log(JSON.parse(localStorage.getItem('filters')), 'log');
 // console.log(filters, 'filters');
-chooseFilteredCardsCollection();
+chooseFilteredCards();
 // chooseFilteredCardsMetal();
 
 showChosenFiltersCollection();

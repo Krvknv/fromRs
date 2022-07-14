@@ -42,7 +42,7 @@ export function chooseFilter(event: Event, value: string) {
         filters.push(value);
         localStorage.setItem('filters', JSON.stringify(filters));
 
-        chooseFilteredCardsCollection();
+        chooseFilteredCards();
     } else {
         filters = filters.filter((item) => {
             return item !== value;
@@ -50,11 +50,11 @@ export function chooseFilter(event: Event, value: string) {
 
         localStorage.setItem('filters', JSON.stringify(filters));
 
-        chooseFilteredCardsCollection();
+        chooseFilteredCards();
     }
 }
 
-export function chooseFilteredCardsCollection() {
+export function chooseFilteredCards() {
     if (filters.length === 0) {
         cards.innerHTML = null;
         renderCard();

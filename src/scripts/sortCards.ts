@@ -3,7 +3,7 @@ import { itemType } from './types';
 import { itemArr } from './itemArr';
 import { createCard } from './createCards';
 import { filters } from './filterCards';
-import { chooseFilteredCardsCollection } from './filterCards';
+import { chooseFilteredCards } from './filterCards';
 // import { formCollection } from './filterCards';
 // // import { chooseFilteredCards } from './filterCards';
 const select = document.querySelector('.sort__select');
@@ -42,7 +42,7 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             }
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCardsCollection();
+            chooseFilteredCards();
             // chooseFilteredCardsMetal();
             break;
         case 'Sort by name(from z to a)':
@@ -55,7 +55,7 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCardsCollection();
+            chooseFilteredCards();
             // chooseFilteredCardsMetal();
 
             break;
@@ -69,7 +69,7 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCardsCollection();
+            chooseFilteredCards();
             // chooseFilteredCardsMetal();
 
             break;
@@ -83,7 +83,7 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCardsCollection();
+            chooseFilteredCards();
             // chooseFilteredCardsMetal();
 
             break;
