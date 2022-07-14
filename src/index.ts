@@ -9,7 +9,13 @@ import { changeBasket } from './scripts/changeQuantityInBasket';
 import { filterCards, rangeFilters } from './scripts/rangeFilterCards';
 // import { rangeFilters } from './scripts/rangeFilterCards';
 
-import { chooseFilter, chooseFilteredCards } from './scripts/filterCards';
+import {
+    chooseFilter,
+    chooseFilteredCardsCollection,
+    // chooseFilteredCardsMetal,
+    showChosenFiltersMetal,
+    showChosenFiltersColor,
+} from './scripts/filterCards';
 
 import { showChosenFiltersCollection } from './scripts/filterCards';
 
@@ -49,7 +55,8 @@ const cardsArr = Array.from(document.querySelectorAll('.card'));
 // import { sortFilteredCards } from './scripts/sortCards';
 
 const formCollection = document.querySelectorAll('.collection .category__label .category__input');
-const metalCollection = document.querySelectorAll('.metal .category__label .category__input');
+const formMetal = document.querySelectorAll('.metal .category__label .category__input');
+const formColor = document.querySelectorAll('.color .category__label .category__input');
 
 formCollection.forEach((item) =>
     item.addEventListener('click', (event) => {
@@ -70,7 +77,7 @@ formCollection.forEach((item) =>
         }
     })
 );
-metalCollection.forEach((item) =>
+formMetal.forEach((item) =>
     item.addEventListener('click', (event) => {
         const value = (event.target as HTMLInputElement).name;
         switch (value) {
@@ -86,9 +93,29 @@ metalCollection.forEach((item) =>
         }
     })
 );
+formColor.forEach((item) =>
+    item.addEventListener('click', (event) => {
+        const value = (event.target as HTMLInputElement).name;
+        switch (value) {
+            case 'yellow':
+                chooseFilter(event, value);
+                break;
+            case 'grey':
+                chooseFilter(event, value);
+                break;
+            case 'pink':
+                chooseFilter(event, value);
+                break;
+        }
+    })
+);
 
 import { filters } from './scripts/filterCards';
-
+console.log(JSON.parse(localStorage.getItem('filters')), 'log');
 // console.log(filters, 'filters');
-chooseFilteredCards();
+chooseFilteredCardsCollection();
+// chooseFilteredCardsMetal();
+
 showChosenFiltersCollection();
+showChosenFiltersMetal();
+showChosenFiltersColor();

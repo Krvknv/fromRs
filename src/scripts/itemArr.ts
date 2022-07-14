@@ -45,7 +45,7 @@ export const itemArr = [
     },
     {
         collection: 'Milan',
-        color: 'gold',
+        color: 'yellow',
         year: 2014,
         metal: 'gold',
         quantity: 6,
@@ -56,7 +56,7 @@ export const itemArr = [
     },
     {
         collection: 'Portugal',
-        color: 'gold',
+        color: 'yellow',
         year: 2018,
         metal: 'gold',
         quantity: 4,
@@ -67,7 +67,7 @@ export const itemArr = [
     },
     {
         collection: 'Portugal',
-        color: 'gold',
+        color: 'yellow',
         year: 2020,
         metal: 'gold',
         quantity: 4,
@@ -78,7 +78,7 @@ export const itemArr = [
     },
     {
         collection: 'Portugal',
-        color: 'gold',
+        color: 'yellow',
         year: 2004,
         metal: 'gold',
         quantity: 1,
@@ -89,7 +89,7 @@ export const itemArr = [
     },
     {
         collection: 'Portugal',
-        color: 'gold',
+        color: 'yellow',
         year: 2019,
         metal: 'gold',
         quantity: 9,
@@ -100,9 +100,9 @@ export const itemArr = [
     },
     {
         collection: 'Timeless Elegance',
-        color: 'gold',
+        color: 'yellow',
         year: 2010,
-        metal: 'old',
+        metal: 'gold',
         quantity: 8,
         price: 120,
         ispopular: false,
@@ -111,7 +111,7 @@ export const itemArr = [
     },
     {
         collection: 'Timeless Elegance',
-        color: 'gold',
+        color: 'yellow',
         year: 2017,
         metal: 'gold',
         quantity: 6,

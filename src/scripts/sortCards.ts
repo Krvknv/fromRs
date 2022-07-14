@@ -3,7 +3,7 @@ import { itemType } from './types';
 import { itemArr } from './itemArr';
 import { createCard } from './createCards';
 import { filters } from './filterCards';
-import { chooseFilteredCards } from './filterCards';
+import { chooseFilteredCardsCollection } from './filterCards';
 // import { formCollection } from './filterCards';
 // // import { chooseFilteredCards } from './filterCards';
 const select = document.querySelector('.sort__select');
@@ -42,7 +42,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             }
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCards();
+            chooseFilteredCardsCollection();
+            // chooseFilteredCardsMetal();
             break;
         case 'Sort by name(from z to a)':
             arr.sort((a: itemType, b: itemType) => b.collection.charCodeAt(0) - a.collection.charCodeAt(0));
@@ -54,7 +55,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCards();
+            chooseFilteredCardsCollection();
+            // chooseFilteredCardsMetal();
 
             break;
         case 'Sort by year(in ascending order)':
@@ -67,7 +69,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCards();
+            chooseFilteredCardsCollection();
+            // chooseFilteredCardsMetal();
 
             break;
         case 'Sort by year(in descending order)':
@@ -80,7 +83,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
 
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
-            chooseFilteredCards();
+            chooseFilteredCardsCollection();
+            // chooseFilteredCardsMetal();
 
             break;
     }
