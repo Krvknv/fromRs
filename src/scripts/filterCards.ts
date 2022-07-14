@@ -40,7 +40,6 @@ export function showChosenFiltersColor() {
 export function chooseFilter(event: Event, value: string) {
     if ((event.target as HTMLInputElement).checked) {
         filters.push(value);
-        console.log(filters);
         localStorage.setItem('filters', JSON.stringify(filters));
 
         chooseFilteredCardsCollection();
@@ -48,7 +47,6 @@ export function chooseFilter(event: Event, value: string) {
         filters = filters.filter((item) => {
             return item !== value;
         });
-        console.log(filters);
 
         localStorage.setItem('filters', JSON.stringify(filters));
 
@@ -57,7 +55,6 @@ export function chooseFilter(event: Event, value: string) {
 }
 
 export function chooseFilteredCardsCollection() {
-    // console.log('flter');
     if (filters.length === 0) {
         cards.innerHTML = null;
         renderCard();
@@ -70,8 +67,6 @@ export function chooseFilteredCardsCollection() {
         (filters.includes('gold') || filters.includes('silver') || filters.includes('pink gold')) &&
         (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink'))
     ) {
-        console.log('color metal');
-
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.metal.toLowerCase()) && filters.includes(card.color.toLowerCase())) {
                 filteredCards.push(card);
@@ -91,8 +86,6 @@ export function chooseFilteredCardsCollection() {
             filters.includes('portugal')) &&
         (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink'))
     ) {
-        console.log('collect color');
-
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.collection.toLowerCase()) && filters.includes(card.color.toLowerCase())) {
                 filteredCards.push(card);
@@ -113,8 +106,6 @@ export function chooseFilteredCardsCollection() {
             filters.includes('portugal')) &&
         (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink'))
     ) {
-        console.log('collect color metal');
-
         for (const card of rangeFilteredCardsArr) {
             if (
                 filters.includes(card.collection.toLowerCase()) &&
@@ -138,10 +129,8 @@ export function chooseFilteredCardsCollection() {
             filters.includes('milan') ||
             filters.includes('portugal'))
     ) {
-        console.log('collect metal');
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.collection.toLowerCase()) && filters.includes(card.metal.toLowerCase())) {
-                console.log('in');
                 filteredCards.push(card);
             }
         }
@@ -153,8 +142,6 @@ export function chooseFilteredCardsCollection() {
         return;
     }
     if (filters.includes('gold') || filters.includes('silver') || filters.includes('pink gold')) {
-        console.log('metal');
-
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.metal.toLowerCase())) {
                 filteredCards.push(card);
@@ -168,8 +155,6 @@ export function chooseFilteredCardsCollection() {
         return;
     }
     if (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink')) {
-        console.log('color');
-
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.color.toLowerCase())) {
                 filteredCards.push(card);
@@ -189,16 +174,6 @@ export function chooseFilteredCardsCollection() {
         filters.includes('milan') ||
         filters.includes('portugal')
     ) {
-        console.log('collect');
-        //  for (const filter of filters) {
-        //     for (const card of rangeFilteredCardsArr) {
-        //         if (card.collection.toLowerCase() === filter) {
-        //             console.log('bjkfdnjbkfndjkfd');
-        //             filteredCards.push(card);
-        //         }
-        //     }
-        // }
-
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.collection.toLowerCase())) {
                 filteredCards.push(card);
@@ -210,34 +185,4 @@ export function chooseFilteredCardsCollection() {
             sortFilteredCards(filteredCards);
         }
     }
-
-    console.log(filteredCards);
-    // if (filteredCards.length === 0) {
-    //     cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
-    // } else {
-    //     sortFilteredCards(filteredCards);
-    // }
 }
-
-// export function chooseFilteredCardsMetal() {
-//     // console.log('flter');
-//     if (filters.length === 0) {
-//         cards.innerHTML = null;
-//         renderCard();
-//         return;
-//     }
-//     const filteredCards: itemType[] = [];
-//     const rangeFilteredCardsArr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
-//     for (const filter of filters) {
-//         for (const card of rangeFilteredCardsArr) {
-//             if (card.metal.toLowerCase() === filter) {
-//                 filteredCards.push(card);
-//             }
-//         }
-//     }
-//     if (filteredCards.length === 0) {
-//         cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
-//     } else {
-//         sortFilteredCards(filteredCards);
-//     }
-// }
