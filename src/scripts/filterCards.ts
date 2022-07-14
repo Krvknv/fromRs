@@ -1,11 +1,48 @@
 import { itemType } from './types';
 import { renderCard } from './createCards';
 import { sortFilteredCards } from './sortCards';
+import { sortPopularCards } from './sortCards';
 
 const cards = document.querySelector('.cards');
 export const formCollection = document.querySelectorAll('.collection .category__label .category__input');
 export const formMetal = document.querySelectorAll('.metal .category__label .category__input');
 const formColor = document.querySelectorAll('.color .category__label .category__input');
+export const filterPopular = document.querySelector('.popular .category__input');
+
+export function isPopularChecked() {
+    if (localStorage.getItem('popularChecked')) {
+        (filterPopular as HTMLInputElement).checked = true;
+    }
+}
+export function showPopularCards() {
+    if ((filterPopular as HTMLInputElement).checked) {
+        localStorage.setItem('popularChecked', 'true');
+        const popularCards = [];
+        const cardsList = document.querySelectorAll('.card');
+        const cardsArr = Array.prototype.slice.call(cardsList);
+        for (const card of cardsArr) {
+            if (card.firstElementChild.textContent === 'popular') {
+                popularCards.push(card);
+            }
+        }
+        if (popularCards.length === 0) {
+            cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
+            return;
+        }
+        cards.innerHTML = null;
+        for (const card of popularCards) {
+            cards.append(card);
+        }
+        sortPopularCards(popularCards);
+        return;
+    } else {
+        cards.innerHTML = null;
+
+        renderCard();
+        chooseFilteredCards();
+        localStorage.setItem('popularChecked', 'false');
+    }
+}
 
 export let filters: string[] = JSON.parse(localStorage.getItem('filters')) || [];
 
@@ -43,6 +80,7 @@ export function chooseFilter(event: Event, value: string) {
         localStorage.setItem('filters', JSON.stringify(filters));
 
         chooseFilteredCards();
+        showPopularCards();
     } else {
         filters = filters.filter((item) => {
             return item !== value;
@@ -51,6 +89,7 @@ export function chooseFilter(event: Event, value: string) {
         localStorage.setItem('filters', JSON.stringify(filters));
 
         chooseFilteredCards();
+        showPopularCards();
     }
 }
 
@@ -152,6 +191,7 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+
         return;
     }
     if (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink')) {

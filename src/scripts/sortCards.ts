@@ -3,7 +3,7 @@ import { itemType } from './types';
 import { itemArr } from './itemArr';
 import { createCard } from './createCards';
 import { filters } from './filterCards';
-import { chooseFilteredCards } from './filterCards';
+import { chooseFilteredCards, showPopularCards } from './filterCards';
 // import { formCollection } from './filterCards';
 // // import { chooseFilteredCards } from './filterCards';
 const select = document.querySelector('.sort__select');
@@ -43,6 +43,7 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
             chooseFilteredCards();
+            showPopularCards();
             // chooseFilteredCardsMetal();
             break;
         case 'Sort by name(from z to a)':
@@ -56,6 +57,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
             chooseFilteredCards();
+            showPopularCards();
+
             // chooseFilteredCardsMetal();
 
             break;
@@ -70,6 +73,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
             chooseFilteredCards();
+            showPopularCards();
+
             // chooseFilteredCardsMetal();
 
             break;
@@ -84,6 +89,8 @@ export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
             localStorage.setItem('sortedCards', JSON.stringify(arr));
             filterCards();
             chooseFilteredCards();
+            showPopularCards();
+
             // chooseFilteredCardsMetal();
 
             break;
@@ -128,6 +135,43 @@ export function sortFilteredCards(arr: itemType[]) {
             for (const item of arr) {
                 const card = createCard(item);
                 cards.append(card);
+            }
+            break;
+    }
+}
+
+export function sortPopularCards(arr: HTMLElement[]) {
+    const value: string = (select as HTMLSelectElement).value;
+
+    switch (value) {
+        case 'Sort by name(from a to z)':
+            arr.sort((a, b) => a.dataset.collection.charCodeAt(0) - b.dataset.collection.charCodeAt(0));
+            cards.innerHTML = null;
+            for (const item of arr) {
+                cards.append(item);
+            }
+
+            break;
+        case 'Sort by name(from z to a)':
+            arr.sort((a, b) => b.dataset.collection.charCodeAt(0) - a.dataset.collection.charCodeAt(0));
+            cards.innerHTML = null;
+            for (const item of arr) {
+                cards.append(item);
+            }
+            break;
+        case 'Sort by year(in ascending order)':
+            arr.sort((a, b) => +a.dataset.year - +b.dataset.year);
+            cards.innerHTML = null;
+            for (const item of arr) {
+                cards.append(item);
+            }
+
+            break;
+        case 'Sort by year(in descending order)':
+            arr.sort((a, b) => +b.dataset.year - +a.dataset.year);
+            cards.innerHTML = null;
+            for (const item of arr) {
+                cards.append(item);
             }
             break;
     }

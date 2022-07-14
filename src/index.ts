@@ -15,6 +15,9 @@ import {
     // chooseFilteredCardsMetal,
     showChosenFiltersMetal,
     showChosenFiltersColor,
+    filterPopular,
+    showPopularCards,
+    isPopularChecked,
 } from './scripts/filterCards';
 
 import { showChosenFiltersCollection } from './scripts/filterCards';
@@ -119,3 +122,9 @@ chooseFilteredCards();
 showChosenFiltersCollection();
 showChosenFiltersMetal();
 showChosenFiltersColor();
+
+filterPopular.addEventListener('click', showPopularCards);
+
+isPopularChecked();
+showPopularCards();
+// import { isPopularChecked } from './scripts/filterCards';
