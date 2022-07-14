@@ -42,11 +42,12 @@ export function createCard(item: itemType) {
     `;
     return card;
 }
-// console.log(JSON.parse(localStorage.getItem('filteredCards')));
 export function renderCard() {
+    // if(JSON.parse(localStorage))
+    // console.log('render');
     let arr;
-    if (JSON.parse(localStorage.getItem('filteredCards'))) {
-        arr = JSON.parse(localStorage.getItem('filteredCards'));
+    if (JSON.parse(localStorage.getItem('rangeFilteredCards'))) {
+        arr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
     } else {
         arr = itemArr;
     }
