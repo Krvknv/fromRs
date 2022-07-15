@@ -6,17 +6,23 @@ import { sortPopularCards } from './sortCards';
 const cards = document.querySelector('.cards');
 export const formCollection = document.querySelectorAll('.collection .category__label .category__input');
 export const formMetal = document.querySelectorAll('.metal .category__label .category__input');
-const formColor = document.querySelectorAll('.color .category__label .category__input');
+export const formColor = document.querySelectorAll('.color .category__label .category__input');
 export const filterPopular = document.querySelector('.popular .category__input');
 
 export function isPopularChecked() {
+    console.log('isPop');
+
     if (localStorage.getItem('popularChecked')) {
         (filterPopular as HTMLInputElement).checked = true;
+        console.log('if');
+    } else {
+        console.log('else');
+        (filterPopular as HTMLInputElement).checked = false;
     }
 }
 export function showPopularCards() {
+    console.log('showPop');
     if ((filterPopular as HTMLInputElement).checked) {
-        localStorage.setItem('popularChecked', 'true');
         const popularCards = [];
         const cardsList = document.querySelectorAll('.card');
         const cardsArr = Array.prototype.slice.call(cardsList);
@@ -27,20 +33,28 @@ export function showPopularCards() {
         }
         if (popularCards.length === 0) {
             cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
+            // localStorage.setItem('noPopular', 'noPopular');
             return;
         }
+        // localStorage.removeItem('noPopular');
         cards.innerHTML = null;
         for (const card of popularCards) {
             cards.append(card);
         }
         sortPopularCards(popularCards);
+        localStorage.setItem('popularChecked', 'checked');
+
         return;
-    } else {
+    }
+    if (!(filterPopular as HTMLInputElement).checked) {
         cards.innerHTML = null;
 
         renderCard();
         chooseFilteredCards();
-        localStorage.setItem('popularChecked', 'false');
+        // localStorage.removeItem('popularChecked');
+        localStorage.removeItem('popularChecked');
+
+        // localStorage.setItem('popularChecked', 'false');
     }
 }
 
@@ -195,6 +209,10 @@ export function chooseFilteredCards() {
         return;
     }
     if (filters.includes('yellow') || filters.includes('grey') || filters.includes('pink')) {
+        console.log('color');
+        // if (!localStorage.getItem('noPopular')) {
+        //     cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
+        // }
         for (const card of rangeFilteredCardsArr) {
             if (filters.includes(card.color.toLowerCase())) {
                 filteredCards.push(card);
@@ -204,7 +222,9 @@ export function chooseFilteredCards() {
             cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
         } else {
             sortFilteredCards(filteredCards);
+            // showPopularCards();
         }
+
         return;
     }
 

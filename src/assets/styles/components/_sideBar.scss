@@ -28,7 +28,8 @@
     max-width: 194px;
     border-bottom: 1px solid rgba(29, 25, 38, 0.5);
 }
-.sort {
+.sort,
+.filter {
     margin-bottom: 20px;
 }
 .sort__select {
@@ -37,6 +38,7 @@
     line-height: 15px;
     text-transform: capitalize;
 }
+
 .filter-name {
     margin-bottom: 50px;
 }
@@ -47,9 +49,7 @@
     margin-bottom: 20px;
     position: relative;
 }
-#slider-price {
-    margin-bottom: 50px;
-}
+
 .noUi-horizontal .noUi-handle {
     width: 25px !important;
     height: 25px !important;
@@ -77,13 +77,15 @@
 .year-end {
     top: -65px;
 }
-.year-end,
+.year-end {
+    left: 148px;
+}
 .price-end {
-    left: 185px;
+    left: 168px;
 }
 .price-start,
 .price-end {
-    top: -95px;
+    top: -72px;
 }
 .btn {
     width: 200px;
@@ -99,4 +101,5 @@
 }
 .popular {
     font-size: 16px;
+    margin-bottom: 50px;
 }

@@ -1,7 +1,7 @@
 import './assets/styles/main.scss';
 import './assets/styles/style.css';
 import { renderCard } from './scripts/createCards';
-// localStorage.clear();
+
 import * as noUiSlider from 'nouislider';
 
 import { changeBasket } from './scripts/changeQuantityInBasket';
@@ -21,6 +21,7 @@ import {
 } from './scripts/filterCards';
 
 import { showChosenFiltersCollection } from './scripts/filterCards';
+import { btnResetAll, resetAll, btnResetFilters, resetFilters } from './scripts/reset';
 
 const cards = document.querySelector('.cards');
 
@@ -28,6 +29,7 @@ const select = document.querySelector('.sort__select');
 
 const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
 const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
+isPopularChecked();
 
 renderCard();
 
@@ -112,9 +114,8 @@ formColor.forEach((item) =>
         }
     })
 );
-
 import { filters } from './scripts/filterCards';
-console.log(JSON.parse(localStorage.getItem('filters')), 'log');
+// console.log(JSON.parse(localStorage.getItem('filters')), 'log');
 // console.log(filters, 'filters');
 chooseFilteredCards();
 // chooseFilteredCardsMetal();
@@ -122,9 +123,13 @@ chooseFilteredCards();
 showChosenFiltersCollection();
 showChosenFiltersMetal();
 showChosenFiltersColor();
+console.log(localStorage.getItem('popularChecked'), 'local');
+showPopularCards();
 
 filterPopular.addEventListener('click', showPopularCards);
-
-isPopularChecked();
-showPopularCards();
+// filterPopular.addEventListener('input', showPopularCards);
+// filterPopular.addEventListener('change', () => console.log('event'));
 // import { isPopularChecked } from './scripts/filterCards';
+
+btnResetAll.addEventListener('click', resetAll);
+btnResetFilters.addEventListener('click', resetFilters);
