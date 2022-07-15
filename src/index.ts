@@ -1,7 +1,7 @@
 import './assets/styles/main.scss';
 import './assets/styles/style.css';
 import { renderCard } from './scripts/createCards';
-
+// localStorage.clear();x`
 import * as noUiSlider from 'nouislider';
 
 import { changeBasket } from './scripts/changeQuantityInBasket';
@@ -35,6 +35,11 @@ renderCard();
 
 import { sortCard } from './scripts/sortCards';
 import { itemType } from './scripts/types';
+
+import { searchInput, deleteSearchBtn, clearInputSearch, searchCards, searchWHilePrint } from './scripts/search';
+window.onload = function () {
+    (searchInput as HTMLInputElement).focus();
+};
 
 cards.addEventListener('click', changeBasket);
 
@@ -133,3 +138,9 @@ filterPopular.addEventListener('click', showPopularCards);
 
 btnResetAll.addEventListener('click', resetAll);
 btnResetFilters.addEventListener('click', resetFilters);
+
+searchInput.addEventListener('input', searchWHilePrint);
+// searchInput.addEventListener('input', (event) => console.log((event.target as HTMLInputElement).size, 'size'));
+deleteSearchBtn.addEventListener('click', clearInputSearch);
+// console.log((searchInput as HTMLInputElement).size, 'text');
+searchCards();

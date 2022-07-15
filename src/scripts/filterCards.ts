@@ -2,6 +2,7 @@ import { itemType } from './types';
 import { renderCard } from './createCards';
 import { sortFilteredCards } from './sortCards';
 import { sortPopularCards } from './sortCards';
+import { searchCards } from './search';
 
 const cards = document.querySelector('.cards');
 export const formCollection = document.querySelectorAll('.collection .category__label .category__input');
@@ -95,6 +96,7 @@ export function chooseFilter(event: Event, value: string) {
 
         chooseFilteredCards();
         showPopularCards();
+        searchCards();
     } else {
         filters = filters.filter((item) => {
             return item !== value;
@@ -104,6 +106,7 @@ export function chooseFilter(event: Event, value: string) {
 
         chooseFilteredCards();
         showPopularCards();
+        searchCards();
     }
 }
 
@@ -130,6 +133,7 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
         return;
     }
     if (
@@ -149,6 +153,8 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
+
         return;
     }
     if (
@@ -173,6 +179,8 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
+
         return;
     }
     if (
@@ -192,6 +200,8 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
+
         return;
     }
     if (filters.includes('gold') || filters.includes('silver') || filters.includes('pink gold')) {
@@ -205,6 +215,7 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
 
         return;
     }
@@ -224,6 +235,7 @@ export function chooseFilteredCards() {
             sortFilteredCards(filteredCards);
             // showPopularCards();
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
 
         return;
     }
@@ -244,5 +256,6 @@ export function chooseFilteredCards() {
         } else {
             sortFilteredCards(filteredCards);
         }
+        localStorage.setItem('filteredCards', JSON.stringify(filteredCards));
     }
 }

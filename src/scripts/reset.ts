@@ -24,6 +24,7 @@ export function resetFilters() {
     localStorage.removeItem('yearEnd');
     localStorage.removeItem('priceStart');
     localStorage.removeItem('priceEnd');
+    localStorage.removeItem('searchText');
 
     // localStorage.removeItem('rangeFilteredCards');
     location.reload();

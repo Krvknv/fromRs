@@ -4,6 +4,7 @@ import { itemArr } from './itemArr';
 import { createCard } from './createCards';
 import { filters } from './filterCards';
 import { chooseFilteredCards, showPopularCards } from './filterCards';
+import { searchInput, searchCards } from './search';
 // import { formCollection } from './filterCards';
 // // import { chooseFilteredCards } from './filterCards';
 const select = document.querySelector('.sort__select');
@@ -13,10 +14,11 @@ import { filterCards } from './rangeFilterCards';
 
 export function sortCard(event?: Event, sort?: string, cardsArr?: itemType[]) {
     // console.log('sort1');
-    // if (filters) {
-    //     chooseFilteredCards();
-    //     return;
-    // }
+    if ((searchInput as HTMLInputElement).value) {
+        sortFilteredCards(JSON.parse(localStorage.getItem('filteredCards')) || itemArr);
+        searchCards();
+        return;
+    }
     const arr = itemArr;
     let value: string;
     if (!sort) {

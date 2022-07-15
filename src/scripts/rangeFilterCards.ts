@@ -4,6 +4,7 @@ import { createCard } from './createCards';
 import { itemType } from './types';
 import { chooseFilteredCards, showPopularCards } from './filterCards';
 import { itemArr } from './itemArr';
+import { searchCards } from './search';
 const cards = document.querySelector('.cards');
 
 const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
@@ -99,6 +100,7 @@ export function filterCards() {
         }
         chooseFilteredCards();
         showPopularCards();
+        searchCards();
         // chooseFilteredCardsMetal();
     }
 }

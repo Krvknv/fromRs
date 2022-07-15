@@ -15,7 +15,7 @@ module.exports = {
     mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Online shop',
+            title: 'Monica',
             filename: 'index.html',
             template: 'src/index.html',
         }),
