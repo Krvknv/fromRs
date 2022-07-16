@@ -16,9 +16,8 @@ import {
     showChosenFiltersMetal,
     showChosenFiltersColor,
     filterPopular,
-    showPopularCards,
-    isPopularChecked,
 } from './scripts/filterCards';
+import { showPopularCards, isPopularChecked } from './scripts/filterPopular';
 
 import { showChosenFiltersCollection } from './scripts/filterCards';
 import { btnResetAll, resetAll, btnResetFilters, resetFilters } from './scripts/reset';
@@ -29,14 +28,13 @@ const select = document.querySelector('.sort__select');
 
 const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
 const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
-isPopularChecked();
 
 renderCard();
 
 import { sortCard } from './scripts/sortCards';
 import { itemType } from './scripts/types';
 
-import { searchInput, deleteSearchBtn, clearInputSearch, searchCards, searchWHilePrint } from './scripts/search';
+import { searchInput, deleteSearchBtn, cleanInputSearch, searchCards, searchWHilePrint } from './scripts/search';
 window.onload = function () {
     (searchInput as HTMLInputElement).focus();
 };
@@ -44,6 +42,7 @@ window.onload = function () {
 cards.addEventListener('click', changeBasket);
 
 sortCard(null, localStorage.getItem('sort'));
+
 select.addEventListener('change', sortCard);
 
 sliderYear.noUiSlider.on('set', function (values, handle, unencoded) {
@@ -59,6 +58,7 @@ sliderPrice.noUiSlider.on('set', function (values, handle, unencoded) {
 });
 
 filterCards();
+
 // console.log(JSON.parse(localStorage.getItem('filters')));
 
 const cardsArr = Array.from(document.querySelectorAll('.card'));
@@ -128,10 +128,14 @@ chooseFilteredCards();
 showChosenFiltersCollection();
 showChosenFiltersMetal();
 showChosenFiltersColor();
-console.log(localStorage.getItem('popularChecked'), 'local');
-showPopularCards();
+// showPopularCards();
 
 filterPopular.addEventListener('click', showPopularCards);
+filterPopular.addEventListener('click', () => {
+    if (!(filterPopular as HTMLInputElement).checked) {
+        localStorage.removeItem('popularChecked');
+    }
+});
 // filterPopular.addEventListener('input', showPopularCards);
 // filterPopular.addEventListener('change', () => console.log('event'));
 // import { isPopularChecked } from './scripts/filterCards';
@@ -141,6 +145,8 @@ btnResetFilters.addEventListener('click', resetFilters);
 
 searchInput.addEventListener('input', searchWHilePrint);
 // searchInput.addEventListener('input', (event) => console.log((event.target as HTMLInputElement).size, 'size'));
-deleteSearchBtn.addEventListener('click', clearInputSearch);
+deleteSearchBtn.addEventListener('click', cleanInputSearch);
 // console.log((searchInput as HTMLInputElement).size, 'text');
 searchCards();
+
+isPopularChecked();

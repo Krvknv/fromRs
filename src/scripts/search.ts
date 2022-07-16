@@ -3,14 +3,18 @@ import { chooseFilteredCards } from './filterCards';
 import { itemType } from './types';
 import { itemArr } from './itemArr';
 import { sortFilteredCards } from './sortCards';
+import { filterPopular, showPopularCards } from './filterPopular';
 export const searchInput = document.querySelector('.search__input');
 export const deleteSearchBtn = document.querySelector('.search__cross');
 const cards = document.querySelector('.cards');
+
 console.log(cards);
 
-export function clearInputSearch() {
+export function cleanInputSearch() {
+    console.log('clean');
     (searchInput as HTMLInputElement).value = '';
     (searchInput as HTMLInputElement).focus();
+    returnCards();
 }
 
 // export function searchCards() {
@@ -40,10 +44,32 @@ export function clearInputSearch() {
 export function searchCards() {
     const requiredCards: itemType[] = [];
 
-    let cardsArr: itemType[];
+    let cardsArr: itemType[] = [];
     if (JSON.parse(localStorage.getItem('filteredCards'))) {
-        cardsArr = JSON.parse(localStorage.getItem('filteredCards'));
+        if ((filterPopular as HTMLInputElement).checked === true) {
+            const arr = JSON.parse(localStorage.getItem('filteredCards'));
+            for (const item of arr) {
+                if (item.ispopular) {
+                    cardsArr.push(item);
+                }
+            }
+        } else {
+            cardsArr = JSON.parse(localStorage.getItem('filteredCards'));
+        }
+    } else if (localStorage.getItem('rangeFilteredCards')) {
+        if ((filterPopular as HTMLInputElement).checked === true) {
+            const arr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
+            for (const item of arr) {
+                if (item.ispopular) {
+                    cardsArr.push(item);
+                }
+            }
+        } else {
+            cardsArr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
+        }
     } else {
+        console.log('chechkeeeeeeeed');
+
         cardsArr = itemArr;
     }
     let searchText;
@@ -70,6 +96,7 @@ export function searchCards() {
     if (!searchText) {
         console.log('dflvkfdkjbfjbjnjnnnnnnnnnnnnnnnnnnnnnnnn');
         returnCards();
+        localStorage.removeItem('searchText');
         // console.log('yeeeeeeees');
     }
     if (requiredCards.length === 0) {
@@ -77,15 +104,39 @@ export function searchCards() {
         cards.innerHTML = '<span class="no-found">Sorry, there was no match</span>';
     }
 }
+
 export function searchWHilePrint() {
     const requiredCards: itemType[] = [];
 
-    let cardsArr: itemType[];
+    let cardsArr: itemType[] = [];
     if (JSON.parse(localStorage.getItem('filteredCards'))) {
-        cardsArr = JSON.parse(localStorage.getItem('filteredCards'));
+        if ((filterPopular as HTMLInputElement).checked === true) {
+            const arr = JSON.parse(localStorage.getItem('filteredCards'));
+            for (const item of arr) {
+                if (item.ispopular) {
+                    cardsArr.push(item);
+                }
+            }
+        } else {
+            cardsArr = JSON.parse(localStorage.getItem('filteredCards'));
+        }
+    } else if (localStorage.getItem('rangeFilteredCards')) {
+        if ((filterPopular as HTMLInputElement).checked === true) {
+            const arr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
+            for (const item of arr) {
+                if (item.ispopular) {
+                    cardsArr.push(item);
+                }
+            }
+        } else {
+            cardsArr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
+        }
     } else {
+        console.log('chechkeeeeeeeed');
+
         cardsArr = itemArr;
     }
+
     const searchText = (searchInput as HTMLInputElement).value;
     localStorage.setItem('searchText', `${searchText}`);
 
@@ -101,6 +152,8 @@ export function searchWHilePrint() {
     if (!searchText) {
         console.log('dflvkfdkjbfjbjnjnnnnnnnnnnnnnnnnnnnnnnnn');
         returnCards();
+        localStorage.removeItem('searchText');
+
         // console.log('yeeeeeeees');
     }
     if (requiredCards.length === 0) {
@@ -110,6 +163,7 @@ export function searchWHilePrint() {
 }
 
 function returnCards() {
-    renderCard();
+    // renderCard();
     chooseFilteredCards();
+    showPopularCards();
 }

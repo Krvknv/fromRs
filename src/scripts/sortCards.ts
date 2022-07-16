@@ -3,12 +3,13 @@ import { itemType } from './types';
 import { itemArr } from './itemArr';
 import { createCard } from './createCards';
 import { filters } from './filterCards';
-import { chooseFilteredCards, showPopularCards } from './filterCards';
+import { chooseFilteredCards } from './filterCards';
+import { showPopularCards } from './filterPopular';
 import { searchInput, searchCards } from './search';
 // import { formCollection } from './filterCards';
 // // import { chooseFilteredCards } from './filterCards';
 const select = document.querySelector('.sort__select');
-const options = document.querySelectorAll('.sort__option');
+export const options = document.querySelectorAll('.sort__option');
 // const cardsArr = Array.from(document.querySelectorAll('.card'));
 import { filterCards } from './rangeFilterCards';
 

@@ -44,7 +44,7 @@ export function createCard(item: itemType) {
 }
 export function renderCard() {
     // if(JSON.parse(localStorage))
-    // console.log('render');
+    console.log('render');
     let arr;
     if (JSON.parse(localStorage.getItem('rangeFilteredCards'))) {
         arr = JSON.parse(localStorage.getItem('rangeFilteredCards'));
@@ -52,6 +52,16 @@ export function renderCard() {
         arr = itemArr;
     }
     for (const item of arr) {
+        const card = createCard(item);
+        cards.append(card);
+    }
+}
+
+export function renderCardsAfterPopular() {
+    const cardsArr =
+        JSON.parse(localStorage.getItem('filteredCards')) || JSON.parse(localStorage.getItem('rangeFilteredCards'));
+    cards.innerHTML = null;
+    for (const item of cardsArr) {
         const card = createCard(item);
         cards.append(card);
     }

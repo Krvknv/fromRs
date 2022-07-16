@@ -2,13 +2,14 @@ import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import { createCard } from './createCards';
 import { itemType } from './types';
-import { chooseFilteredCards, showPopularCards } from './filterCards';
+import { chooseFilteredCards } from './filterCards';
 import { itemArr } from './itemArr';
 import { searchCards } from './search';
 const cards = document.querySelector('.cards');
+import { showPopularCards } from './filterPopular';
 
-const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
-const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
+export const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
+export const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
 
 const sliderYearStart = document.querySelector('.year-start');
 const sliderYearEnd = document.querySelector('.year-end');
@@ -75,7 +76,7 @@ export const rangeFilters = {
 const rangeFilteredCards = new Set();
 
 export function filterCards() {
-    // console.log('rangefilter');
+    console.log('rangefilter');
 
     rangeFilteredCards.clear();
     const sortedCards = JSON.parse(localStorage.getItem('sortedCards')) || itemArr;
