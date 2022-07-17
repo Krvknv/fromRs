@@ -43,8 +43,6 @@ export function createCard(item: itemType) {
     return card;
 }
 export function renderCard() {
-    // if(JSON.parse(localStorage))
-    console.log('render');
     let arr;
     if (JSON.parse(localStorage.getItem('rangeFilteredCards'))) {
         arr = JSON.parse(localStorage.getItem('rangeFilteredCards'));

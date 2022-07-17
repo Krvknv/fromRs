@@ -1,18 +1,15 @@
 import './assets/styles/main.scss';
 import './assets/styles/style.css';
 import { renderCard } from './scripts/createCards';
-// localStorage.clear();x`
 import * as noUiSlider from 'nouislider';
 
 import { changeBasket } from './scripts/changeQuantityInBasket';
 
 import { filterCards, rangeFilters } from './scripts/rangeFilterCards';
-// import { rangeFilters } from './scripts/rangeFilterCards';
 
 import {
     chooseFilter,
     chooseFilteredCards,
-    // chooseFilteredCardsMetal,
     showChosenFiltersMetal,
     showChosenFiltersColor,
     filterPopular,
@@ -22,6 +19,10 @@ import { showPopularCards, isPopularChecked } from './scripts/filterPopular';
 import { showChosenFiltersCollection } from './scripts/filterCards';
 import { btnResetAll, resetAll, btnResetFilters, resetFilters } from './scripts/reset';
 
+import { sortCard } from './scripts/sortCards';
+
+import { searchInput, deleteSearchBtn, cleanInputSearch, searchCards, searchWHilePrint } from './scripts/search';
+
 const cards = document.querySelector('.cards');
 
 const select = document.querySelector('.sort__select');
@@ -29,19 +30,24 @@ const select = document.querySelector('.sort__select');
 const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
 const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
 
+const formCollection = document.querySelectorAll('.collection .category__label .category__input');
+const formMetal = document.querySelectorAll('.metal .category__label .category__input');
+const formColor = document.querySelectorAll('.color .category__label .category__input');
+
 renderCard();
 
-import { sortCard } from './scripts/sortCards';
-import { itemType } from './scripts/types';
-
-import { searchInput, deleteSearchBtn, cleanInputSearch, searchCards, searchWHilePrint } from './scripts/search';
-window.onload = function () {
-    (searchInput as HTMLInputElement).focus();
-};
-
-cards.addEventListener('click', changeBasket);
-
 sortCard(null, localStorage.getItem('sort'));
+
+filterCards();
+
+chooseFilteredCards();
+showChosenFiltersCollection();
+showChosenFiltersMetal();
+showChosenFiltersColor();
+
+searchCards();
+
+isPopularChecked();
 
 select.addEventListener('change', sortCard);
 
@@ -57,16 +63,24 @@ sliderPrice.noUiSlider.on('set', function (values, handle, unencoded) {
     filterCards();
 });
 
-filterCards();
+filterPopular.addEventListener('click', showPopularCards);
+filterPopular.addEventListener('click', () => {
+    if (!(filterPopular as HTMLInputElement).checked) {
+        localStorage.removeItem('popularChecked');
+    }
+});
 
-// console.log(JSON.parse(localStorage.getItem('filters')));
+window.onload = function () {
+    (searchInput as HTMLInputElement).focus();
+};
 
-const cardsArr = Array.from(document.querySelectorAll('.card'));
-// import { sortFilteredCards } from './scripts/sortCards';
+cards.addEventListener('click', changeBasket);
 
-const formCollection = document.querySelectorAll('.collection .category__label .category__input');
-const formMetal = document.querySelectorAll('.metal .category__label .category__input');
-const formColor = document.querySelectorAll('.color .category__label .category__input');
+btnResetAll.addEventListener('click', resetAll);
+btnResetFilters.addEventListener('click', resetFilters);
+
+searchInput.addEventListener('input', searchWHilePrint);
+deleteSearchBtn.addEventListener('click', cleanInputSearch);
 
 formCollection.forEach((item) =>
     item.addEventListener('click', (event) => {
@@ -119,34 +133,3 @@ formColor.forEach((item) =>
         }
     })
 );
-import { filters } from './scripts/filterCards';
-// console.log(JSON.parse(localStorage.getItem('filters')), 'log');
-// console.log(filters, 'filters');
-chooseFilteredCards();
-// chooseFilteredCardsMetal();
-
-showChosenFiltersCollection();
-showChosenFiltersMetal();
-showChosenFiltersColor();
-// showPopularCards();
-
-filterPopular.addEventListener('click', showPopularCards);
-filterPopular.addEventListener('click', () => {
-    if (!(filterPopular as HTMLInputElement).checked) {
-        localStorage.removeItem('popularChecked');
-    }
-});
-// filterPopular.addEventListener('input', showPopularCards);
-// filterPopular.addEventListener('change', () => console.log('event'));
-// import { isPopularChecked } from './scripts/filterCards';
-
-btnResetAll.addEventListener('click', resetAll);
-btnResetFilters.addEventListener('click', resetFilters);
-
-searchInput.addEventListener('input', searchWHilePrint);
-// searchInput.addEventListener('input', (event) => console.log((event.target as HTMLInputElement).size, 'size'));
-deleteSearchBtn.addEventListener('click', cleanInputSearch);
-// console.log((searchInput as HTMLInputElement).size, 'text');
-searchCards();
-
-isPopularChecked();

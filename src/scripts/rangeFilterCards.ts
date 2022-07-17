@@ -5,8 +5,9 @@ import { itemType } from './types';
 import { chooseFilteredCards } from './filterCards';
 import { itemArr } from './itemArr';
 import { searchCards } from './search';
-const cards = document.querySelector('.cards');
 import { showPopularCards } from './filterPopular';
+
+const cards = document.querySelector('.cards');
 
 export const sliderYear: noUiSlider.target = document.getElementById('slider-year') as noUiSlider.target;
 export const sliderPrice: noUiSlider.target = document.getElementById('slider-price') as noUiSlider.target;
@@ -42,13 +43,13 @@ noUiSlider.create(sliderPrice, {
     step: 1,
 });
 
-sliderYear.noUiSlider.on('slide', function (values, handle, unencoded, tap, positions, noUiSlider) {
+sliderYear.noUiSlider.on('slide', function (values, handle, unencoded) {
     localStorage.setItem('yearStart', String(unencoded[0]));
     localStorage.setItem('yearEnd', String(unencoded[1]));
     sliderYearStart.textContent = String(unencoded[0]);
     sliderYearEnd.textContent = String(unencoded[1]);
 });
-sliderPrice.noUiSlider.on('slide', function (values, handle, unencoded, tap, positions, noUiSlider) {
+sliderPrice.noUiSlider.on('slide', function (values, handle, unencoded) {
     localStorage.setItem('priceStart', String(Math.trunc(unencoded[0])));
     localStorage.setItem('priceEnd', String(Math.trunc(unencoded[1])));
     sliderPriceStart.textContent = String(Math.trunc(unencoded[0]));
@@ -61,23 +62,10 @@ export const rangeFilters = {
     maxPrice: (sliderPrice.noUiSlider.get() as number[])[1],
     minPrice: (sliderPrice.noUiSlider.get() as number[])[0],
 };
-// sliderYear.noUiSlider.on('set', function (values, handle, unencoded, tap, positions, noUiSlider) {
-//     filters.minYear = unencoded[0];
-//     filters.maxYear = unencoded[1];
-//     filterCards();
-// });
-
-// sliderPrice.noUiSlider.on('set', function (values, handle, unencoded, tap, positions, noUiSlider) {
-//     filters.minPrice = unencoded[0];
-//     filters.maxPrice = unencoded[1];
-//     filterCards();
-// });
 
 const rangeFilteredCards = new Set();
 
 export function filterCards() {
-    console.log('rangefilter');
-
     rangeFilteredCards.clear();
     const sortedCards = JSON.parse(localStorage.getItem('sortedCards')) || itemArr;
     for (const item of sortedCards) {
@@ -102,7 +90,5 @@ export function filterCards() {
         chooseFilteredCards();
         showPopularCards();
         searchCards();
-        // chooseFilteredCardsMetal();
     }
 }
-// chooseFilteredCards();

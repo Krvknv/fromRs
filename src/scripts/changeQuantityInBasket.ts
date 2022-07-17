@@ -7,7 +7,7 @@ export function changeBasket(event: Event) {
             localStorage.setItem('quantityInBskt', basketNum.textContent);
             changeBtn(event.target);
         } else {
-            alert('Извините, все слоты заполнены');
+            alert('Sorry, all slots are full');
         }
     }
 }
