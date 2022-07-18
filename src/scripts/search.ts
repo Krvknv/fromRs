@@ -11,7 +11,7 @@ const cards = document.querySelector('.cards');
 export function cleanInputSearch() {
     (searchInput as HTMLInputElement).value = '';
     (searchInput as HTMLInputElement).focus();
-    returnCards();
+    returnCards<void>();
 }
 
 export function searchCards() {
@@ -62,7 +62,7 @@ export function searchCards() {
     }
     sortFilteredCards(requiredCards);
     if (!searchText) {
-        returnCards();
+        returnCards<void>();
         localStorage.removeItem('searchText');
     }
     if (requiredCards.length === 0) {
@@ -113,7 +113,7 @@ export function searchWHilePrint() {
     sortFilteredCards(requiredCards);
 
     if (!searchText) {
-        returnCards();
+        returnCards<void>();
         localStorage.removeItem('searchText');
     }
 
@@ -123,7 +123,8 @@ export function searchWHilePrint() {
     }
 }
 
-function returnCards() {
+function returnCards<T>(): T {
     chooseFilteredCards();
     showPopularCards();
+    return;
 }
