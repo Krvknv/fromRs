@@ -7,7 +7,7 @@ export const itemArr = [
         quantity: 3,
         price: 160,
         ispopular: true,
-        img: '../../src/assets/image/img/earrings1.jpg',
+        img: './assets/image/img/earrings1.jpg',
         id: 1,
     },
     {
@@ -18,7 +18,7 @@ export const itemArr = [
         quantity: 9,
         price: 130,
         ispopular: true,
-        img: '../../src/assets/image/img/earrings6.jpg',
+        img: './assets/image/img/earrings6.jpg',
         id: 6,
     },
     {
@@ -29,7 +29,7 @@ export const itemArr = [
         quantity: 15,
         price: 85,
         ispopular: true,
-        img: '../../src/assets/image/img/earrings9.jpg',
+        img: './assets/image/img/earrings9.jpg',
         id: 9,
     },
     {
@@ -40,7 +40,7 @@ export const itemArr = [
         quantity: 1,
         price: 210,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings3.jpg',
+        img: './assets/image/img/earrings3.jpg',
         id: 3,
     },
     {
@@ -51,7 +51,7 @@ export const itemArr = [
         quantity: 6,
         price: 155,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings7.jpg',
+        img: './assets/image/img/earrings7.jpg',
         id: 7,
     },
     {
@@ -62,7 +62,7 @@ export const itemArr = [
         quantity: 4,
         price: 185,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings4.jpg',
+        img: './assets/image/img/earrings4.jpg',
         id: 4,
     },
     {
@@ -73,7 +73,7 @@ export const itemArr = [
         quantity: 4,
         price: 185,
         ispopular: true,
-        img: '../../src/assets/image/img/earrings5.jpg',
+        img: './assets/image/img/earrings5.jpg',
         id: 5,
     },
     {
@@ -84,7 +84,7 @@ export const itemArr = [
         quantity: 1,
         price: 105,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings8.jpg',
+        img: './assets/image/img/earrings8.jpg',
         id: 8,
     },
     {
@@ -95,7 +95,7 @@ export const itemArr = [
         quantity: 9,
         price: 260,
         ispopular: true,
-        img: '../../src/assets/image/img/earrings12.jpg',
+        img: './assets/image/img/earrings12.jpg',
         id: 12,
     },
     {
@@ -106,7 +106,7 @@ export const itemArr = [
         quantity: 8,
         price: 120,
         ispopular: false,
-        img: '.../../src/assets/image/img/earrings2.jpg',
+        img: './assets/image/img/earrings2.jpg',
         id: 2,
     },
     {
@@ -117,7 +117,7 @@ export const itemArr = [
         quantity: 6,
         price: 125,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings10.jpg',
+        img: './assets/image/img/earrings10.jpg',
         id: 10,
     },
     {
@@ -128,7 +128,7 @@ export const itemArr = [
         quantity: 7,
         price: 200,
         ispopular: false,
-        img: '../../src/assets/image/img/earrings11.jpg',
+        img: './assets/image/img/earrings11.jpg',
         id: 11,
     },
 ];
