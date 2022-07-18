@@ -1,0 +1,105 @@
+.aside {
+    display: flex;
+    flex-direction: column;
+    margin-right: 110px;
+}
+.category {
+    margin-bottom: 30px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    &__label {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: capitalize;
+    }
+    &__input {
+        margin-right: 8px;
+    }
+}
+.category-name {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 194px;
+    border-bottom: 1px solid rgba(29, 25, 38, 0.5);
+}
+.sort,
+.filter {
+    margin-bottom: 20px;
+}
+.sort__select {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: capitalize;
+}
+
+.filter-name {
+    margin-bottom: 50px;
+}
+#slider-year,
+#slider-price {
+    width: 200px;
+    height: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 25px !important;
+    height: 25px !important;
+    right: -17px !important;
+    top: -5px !important;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.noUi-handle:before,
+.noUi-handle::after {
+    display: none !important;
+}
+
+.noUi-connect {
+    background: $main-color !important;
+}
+
+.year-start,
+.year-end,
+.price-start,
+.price-end {
+    position: relative;
+}
+.year-start,
+.year-end {
+    top: -65px;
+}
+.year-end {
+    left: 148px;
+}
+.price-end {
+    left: 168px;
+}
+.price-start,
+.price-end {
+    top: -72px;
+}
+.btn {
+    width: 200px;
+    height: 50px;
+    background-color: $main-color;
+    color: $additional-font-color;
+    border-radius: 100px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    &:hover {
+        background-color: darken($main-color, 10%);
+    }
+}
+.popular {
+    font-size: 16px;
+    margin-bottom: 50px;
+}
