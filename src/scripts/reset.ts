@@ -1,5 +1,3 @@
-import 'nouislider/dist/nouislider.css';
-
 export const btnResetAll = document.querySelector('.btn-reset-all');
 export const btnResetFilters = document.querySelector('.btn-reset-filters');
 
