@@ -2,6 +2,7 @@ import './assets/styles/main.scss';
 import './assets/styles/style.css';
 import { renderCard } from './scripts/createCards';
 import * as noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
 
 import { changeBasket } from './scripts/changeQuantityInBasket';
 
