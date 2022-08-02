@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c6b8d1;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.garage-btn,
+.winners-btn,
+.create-btn,
+.update-btn,
+.race-btn,
+.reset-btn,
+.generate-btn,
+.prev-btn,
+.next-btn,
+.btn-select,
+.btn-remove,
+.btn-a,
+.btn-b {
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+.garage-btn,
+.winners-btn {
+    text-decoration: none;
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.garage-btn {
+    margin-right: 10px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create,
+.update {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-text {
+    width: 284px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.input-color {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+
+.btns,
+.pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.generate-btn {
+    width: 227px;
+}
+
+.main {
+    padding: 20px;
+}
+.garage-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.track-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.page-name,
+.page-num,
+.car-name,
+.quantity {
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.text {
+    position: relative;
+}
+.quantity {
+    position: absolute;
+    top: 13px;
+    left: 130px;
+}
+
+.track-wrapper {
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #fff;
+    position: relative;
+}
+
+.car {
+    width: 100px;
+    height: 50px;
+}
+.car-svg {
+    width: 100%;
+    height: auto;
+}
+.game-controls {
+    margin-bottom: 15px;
+}
+.flag {
+    background-image: url('./assets/image/svg/flag.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
+.winner-wrapper {
+    /* opacity: 0; */
+    /* position: absolute;
+    z-index: -1; */
+    display: none;
+}
+.table {
+    text-transform: capitalize;
+}
+.table-head {
+    color: #fff;
+    font-size: 20px;
+}
+.table-head > * {
+    width: 150px;
+}
+.table-row > * {
+    text-align: center;
+}
+.table-car-svg > .car-svg {
+    width: 100px;
+    height: auto;
+}
