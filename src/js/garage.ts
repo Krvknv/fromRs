@@ -44,6 +44,7 @@ export const createTrack = (carData: TCar) => {
     const btnRemove = document.createElement('button');
     btnRemove.classList.add('btn-remove');
     btnRemove.textContent = 'remove';
+    btnRemove.setAttribute('data-carId', `${carData.id}`);
     trackHeader.append(btnRemove);
 
     const carName = document.createElement('span');

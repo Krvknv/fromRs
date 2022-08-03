@@ -11,6 +11,7 @@ import { createTitleBlock } from './titleBlock';
 import { store } from './store';
 import { createCar } from './createCar';
 import { changeCar, updateCar } from './updateCar';
+import { deleteCar } from './deleteCar';
 
 export const startApp = async () => {
     // navigate controls
@@ -21,17 +22,26 @@ export const startApp = async () => {
 
     // options controls
     await registerOptionBlock();
+
     // text block
     await createTitleBlock(store);
+
     // garage
     await registerGarage();
+
     // table
     await registerTable();
+
     // pagination
     registerPagination();
+
     // show right page
     handlerPageChanger();
+
+    //
     // handlers
+
+    // start app
     window.addEventListener('hashchange', handlerPageChanger);
 
     const gameControls = document.querySelector('.game-controls');
@@ -45,18 +55,26 @@ export const startApp = async () => {
         }
     });
 
+    // generate cars
     const generateBtn = document.querySelector('.generate-btn');
     generateBtn.addEventListener('click', generateCars);
 
+    // create car
     const createBtn = document.querySelector('.create-btn');
     createBtn.addEventListener('click', createCar);
 
+    // pagination in garage
     const pagination = document.querySelector('.pagination');
     pagination.addEventListener('click', handlerPagination);
 
+    // choode car for updating
     const trackList = document.querySelector('.track-list');
     trackList.addEventListener('click', updateCar);
 
+    // update car
     const updateBtn = document.querySelector('.update-btn');
     updateBtn.addEventListener('click', changeCar);
+
+    // deelte car
+    trackList.addEventListener('click', deleteCar);
 };

@@ -8,3 +8,9 @@ export const getCars = async (limit: number, page: number) => {
     // localStorage.setItem('carsQuantity', String(jsonResponse.length));
     return jsonResponse;
 };
+
+export const getAllCars = async () => {
+    const allCars = await fetch(GET_CAR_URL);
+    const allCarsJson = await allCars.json();
+    return allCarsJson;
+};
