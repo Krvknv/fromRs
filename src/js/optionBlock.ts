@@ -34,16 +34,19 @@ const createBlockUpdateCar = () => {
     const updateName = document.createElement('input');
     updateName.type = 'text';
     updateName.classList.add('input-text');
+    updateName.disabled = true;
     updateCar.append(updateName);
 
     const updateColor = document.createElement('input');
     updateColor.type = 'color';
     updateColor.classList.add('input-color');
+    updateColor.disabled = true;
     updateCar.append(updateColor);
 
     const updateBtn = document.createElement('button');
     updateBtn.classList.add('update-btn');
     updateBtn.textContent = 'update';
+    updateBtn.disabled = true;
     updateCar.append(updateBtn);
 
     return updateCar;

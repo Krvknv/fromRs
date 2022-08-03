@@ -10,6 +10,7 @@ import { generateCars } from './generateCars';
 import { createTitleBlock } from './titleBlock';
 import { store } from './store';
 import { createCar } from './createCar';
+import { changeCar, updateCar } from './updateCar';
 
 export const startApp = async () => {
     // navigate controls
@@ -52,4 +53,10 @@ export const startApp = async () => {
 
     const pagination = document.querySelector('.pagination');
     pagination.addEventListener('click', handlerPagination);
+
+    const trackList = document.querySelector('.track-list');
+    trackList.addEventListener('click', updateCar);
+
+    const updateBtn = document.querySelector('.update-btn');
+    updateBtn.addEventListener('click', changeCar);
 };

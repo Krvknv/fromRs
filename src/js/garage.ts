@@ -29,6 +29,7 @@ const createFlag = () => {
 export const createTrack = (carData: TCar) => {
     const trackWrapper = document.createElement('div');
     trackWrapper.classList.add('track-wrapper');
+    trackWrapper.setAttribute('data-carId', `${carData.id}`);
 
     const trackHeader = document.createElement('div');
     trackHeader.classList.add('track-header');
@@ -37,6 +38,7 @@ export const createTrack = (carData: TCar) => {
     const btnSelect = document.createElement('button');
     btnSelect.classList.add('btn-select');
     btnSelect.textContent = 'select';
+    btnSelect.setAttribute('data-carId', `${carData.id}`);
     trackHeader.append(btnSelect);
 
     const btnRemove = document.createElement('button');
@@ -46,7 +48,7 @@ export const createTrack = (carData: TCar) => {
 
     const carName = document.createElement('span');
     carName.classList.add('car-name');
-    carName.textContent = carData?.name ?? 'opellll';
+    carName.textContent = carData.name;
     trackHeader.append(carName);
 
     const gameControls = document.createElement('div');

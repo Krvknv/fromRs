@@ -24,4 +24,5 @@ export type TStore = {
     pageNumWinners: number;
     carsQuantity: number;
     winnersQuantity: number;
+    selectedCarId: string;
 };

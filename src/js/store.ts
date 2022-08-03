@@ -4,4 +4,5 @@ export const store = {
     pageNumWinners: 1,
     carsQuantity: +localStorage.getItem('carsQuantity') || 4,
     winnersQuantity: +localStorage.getItem('winnersQuantity') || 1,
+    selectedCarId: '',
 };
