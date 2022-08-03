@@ -17,7 +17,7 @@ export const createTitleBlock = (data: TStore) => {
 
     const subTitle = document.createElement('h2');
     subTitle.classList.add('page-num');
-    subTitle.textContent = 'page 1';
+    subTitle.textContent = `page ${data.pageNumGarage}`;
     text.append(subTitle);
 
     main.append(text);

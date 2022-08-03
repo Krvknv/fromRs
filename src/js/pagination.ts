@@ -27,12 +27,14 @@ export const registerPagination = () => {
 };
 
 const tunePreviousBtn = async () => {
+    const pageNum = document.querySelector('.page-num');
     const trackList = document.querySelector('.track-list');
     const hash = window.location.hash.slice(1);
     if (hash === 'garage' || hash === '') {
         if (store.pageNumGarage > 1) {
             store.pageNumGarage--;
             localStorage.setItem('pageNumGarage', String(store.pageNumGarage));
+            pageNum.textContent = `page ${store.pageNumGarage}`;
 
             const carsData = await getCars(7, store.pageNumGarage);
             trackList.innerHTML = null;
@@ -45,12 +47,14 @@ const tunePreviousBtn = async () => {
 };
 
 const tuneNextiousBtn = async () => {
+    const pageNum = document.querySelector('.page-num');
     const trackList = document.querySelector('.track-list');
     const hash = window.location.hash.slice(1);
     if (hash === 'garage' || hash === '') {
         if (store.pageNumGarage > 0) {
             store.pageNumGarage++;
             localStorage.setItem('pageNumGarage', String(store.pageNumGarage));
+            pageNum.textContent = `page ${store.pageNumGarage}`;
 
             const carsData = await getCars(7, store.pageNumGarage);
 
