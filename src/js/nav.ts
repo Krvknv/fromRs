@@ -31,6 +31,7 @@ const createNavControls = () => {
 };
 
 export const handlerPageChanger = () => {
+    const pageNum = document.querySelector('.page-num');
     const quantity = document.querySelector('.quantity');
     const pageName = document.querySelector('.page-name');
     const options = document.querySelector('.options') as HTMLElement;
@@ -53,9 +54,9 @@ export const handlerPageChanger = () => {
         // quantity.textContent = `${store.carsQuantity}`;
         quantity.textContent = `${localStorage.getItem('carsQuantity') || store.carsQuantity}`;
 
+        pageNum.textContent = `page ${localStorage.getItem('pageNumGarage') || store.pageNumGarage}`;
+
         localStorage.setItem('place', 'garage');
-        console.log(store.carsQuantity, 'store');
-        console.log(localStorage.getItem('carsQuantity'), 'ls');
     }
 
     if (hash === 'winners') {
@@ -71,6 +72,8 @@ export const handlerPageChanger = () => {
         store.pageName = 'winners';
 
         quantity.textContent = `${store.winnersQuantity}`;
+
+        pageNum.textContent = `page ${localStorage.getItem('pageNumWinners') || store.pageNumWinners}`;
 
         localStorage.setItem('place', 'winners');
     }

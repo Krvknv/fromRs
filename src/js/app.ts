@@ -12,6 +12,7 @@ import { store } from './store';
 import { createCar } from './createCar';
 import { changeCar, updateCar } from './updateCar';
 import { deleteCar } from './deleteCar';
+import { raceCar, returnCar } from './race';
 
 export const startApp = async () => {
     // navigate controls
@@ -44,16 +45,16 @@ export const startApp = async () => {
     // start app
     window.addEventListener('hashchange', handlerPageChanger);
 
-    const gameControls = document.querySelector('.game-controls');
+    // const gameControls = document.querySelector('.game-controls');
 
-    gameControls.addEventListener('click', (event) => {
-        if ((event.target as HTMLElement).classList.contains('btn-a')) {
-            console.log('a');
-        }
-        if ((event.target as HTMLElement).classList.contains('btn-b')) {
-            console.log('b');
-        }
-    });
+    // gameControls.addEventListener('click', (event) => {
+    //     if ((event.target as HTMLElement).classList.contains('btn-a')) {
+    //         console.log('a');
+    //     }
+    //     if ((event.target as HTMLElement).classList.contains('btn-b')) {
+    //         console.log('b');
+    //     }
+    // });
 
     // generate cars
     const generateBtn = document.querySelector('.generate-btn');
@@ -77,4 +78,8 @@ export const startApp = async () => {
 
     // deelte car
     trackList.addEventListener('click', deleteCar);
+
+    // race car
+    trackList.addEventListener('click', raceCar);
+    trackList.addEventListener('click', returnCar);
 };

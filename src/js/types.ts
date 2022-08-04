@@ -25,4 +25,6 @@ export type TStore = {
     carsQuantity: number;
     winnersQuantity: number;
     selectedCarId: string;
+    carId: string;
+    animation: Animation | null;
 };

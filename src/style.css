@@ -130,12 +130,15 @@ body {
 .car {
     width: 100px;
     height: 50px;
+    position: relative;
 }
 .car-svg {
     width: 100%;
     height: auto;
 }
 .game-controls {
+    display: flex;
+    gap: 10px;
     margin-bottom: 15px;
 }
 .flag {
@@ -146,7 +149,7 @@ body {
     height: 50px;
     position: absolute;
     top: 100px;
-    right: 100px;
+    right: 110px;
 }
 .winner-wrapper {
     /* opacity: 0; */
