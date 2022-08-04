@@ -27,4 +27,16 @@ export type TStore = {
     selectedCarId: string;
     carId: string;
     animation: Animation | null;
+    animationArr: Animation[];
+};
+
+export type TWinnerData = {
+    success: boolean;
+    carId: string;
+    time: number;
+};
+
+export type TParams = {
+    velocity: number;
+    distance: number;
 };

@@ -13,6 +13,7 @@ import { createCar } from './createCar';
 import { changeCar, updateCar } from './updateCar';
 import { deleteCar } from './deleteCar';
 import { raceCar, returnCar } from './race';
+import { raceAllCars, resetAllCars } from './raceAllcars';
 
 export const startApp = async () => {
     // navigate controls
@@ -82,4 +83,11 @@ export const startApp = async () => {
     // race car
     trackList.addEventListener('click', raceCar);
     trackList.addEventListener('click', returnCar);
+
+    // race all car
+    const raceBtn = document.querySelector('.race-btn');
+    raceBtn.addEventListener('click', raceAllCars);
+
+    const resetBtn = document.querySelector('.reset-btn');
+    resetBtn.addEventListener('click', resetAllCars);
 };

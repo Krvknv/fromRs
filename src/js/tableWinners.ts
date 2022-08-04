@@ -1,5 +1,6 @@
 import { getWinners } from './api/winners';
 import { GET_CAR_URL } from './constants';
+import { store } from './store';
 import { createImgCar } from './svgCar';
 import { TCar, TFullWinner, TWinner } from './types';
 
@@ -86,7 +87,7 @@ export const registerTable = async () => {
     const carsResponse = await fetch(GET_CAR_URL);
     const carsData = await carsResponse.json();
 
-    const winnersData = await getWinners(10, 1);
+    const winnersData = await getWinners(10, store.winnersQuantity);
 
     const fullWinners = prepareData(winnersData, carsData);
     const main = document.querySelector('.main');

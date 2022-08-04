@@ -1,4 +1,5 @@
 import { store } from './store';
+import { registerTable } from './tableWinners';
 
 const createHeader = () => {
     const body = document.querySelector('body') as HTMLBodyElement;
@@ -30,7 +31,7 @@ const createNavControls = () => {
     header.append(btns);
 };
 
-export const handlerPageChanger = () => {
+export const handlerPageChanger = async () => {
     const pageNum = document.querySelector('.page-num');
     const quantity = document.querySelector('.quantity');
     const pageName = document.querySelector('.page-name');
@@ -60,6 +61,8 @@ export const handlerPageChanger = () => {
     }
 
     if (hash === 'winners') {
+        // table
+
         // options.style.opacity = '0';
         // garageWrapper.style.opacity = '0';
         // winnersWrapper.style.opacity = '1';

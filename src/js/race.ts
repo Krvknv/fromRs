@@ -17,18 +17,6 @@ const animmateRace = async (value: string) => {
     store.animation = carAnimation;
     store.carId = value;
     driveCar(value, 'drive', carAnimation);
-
-    // const trackList = document.querySelector('.track-list');
-    // trackList.addEventListener('click', (event: Event) => {
-    //     const node = event.target as HTMLButtonElement;
-    //     if (node.classList.contains('btn-b')) {
-    //         const btnA = document.querySelector(`.btn-a[data-carid="${value}"]`) as HTMLButtonElement;
-
-    //         node.disabled = true;
-    //         btnA.disabled = false;
-    //         carAnimation.cancel();
-    //     }
-    // });
 };
 
 export const raceCar = (event: Event) => {

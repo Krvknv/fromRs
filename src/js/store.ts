@@ -1,5 +1,7 @@
 import { TStore } from './types';
 
+// export const controller = new AbortController();
+// export const signal = controller.signal;
 export const store: TStore = {
     pageName: localStorage.getItem('place') || 'garage',
     pageNumGarage: +localStorage.getItem('pageNumGarage') || 1,
@@ -9,4 +11,5 @@ export const store: TStore = {
     selectedCarId: '',
     carId: '',
     animation: null,
+    animationArr: [],
 };
