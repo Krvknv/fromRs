@@ -1,14 +1,29 @@
-import { getWinners } from './api/winners';
+import { getAllWinners, getWinners } from './api/winners';
 import { GET_CAR_URL } from './constants';
 import { store } from './store';
 import { createImgCar } from './svgCar';
 import { TCar, TFullWinner, TWinner } from './types';
+
+export const showWinnersQuantity = async () => {
+    const winners = await getAllWinners();
+    const winnersQuantity = winners.length;
+
+    return winnersQuantity;
+};
 
 const createWinnersWrapper = () => {
     const winnerWrapper = document.createElement('div');
     winnerWrapper.classList.add('winner-wrapper');
 
     return winnerWrapper;
+};
+
+const createSortBtn = (className: string, text: string) => {
+    const btn = document.createElement('button');
+    btn.classList.add(`${className}`);
+    btn.textContent = `${text}`;
+
+    return btn;
 };
 
 const createTable = () => {
@@ -130,7 +145,10 @@ export const registerTable = async () => {
     const table = createTable();
     const winnersWrapper = createWinnersWrapper();
     const tableHeader = createHeaderTable();
+    const btnSortByWins = createSortBtn('sort-win', 'sort  by wins');
+    const btnSortBytime = createSortBtn('sort-time', 'sort  by best time');
 
+    winnersWrapper.append(btnSortByWins, btnSortBytime);
     table.append(tableHeader);
 
     winnersWrapper.append(table);

@@ -7,6 +7,13 @@ export const getWinners = async (limit: number, page: number) => {
     const jsonResponse = await response.json();
     return jsonResponse;
 };
+
+export const getAllWinners = async () => {
+    const response = await fetch(GET_WINNERS_URL);
+    const jsonResponse = await response.json();
+    return jsonResponse;
+};
+
 const createWinner = async (data: TWinnerData) => {
     const winner = {
         id: data.carId,

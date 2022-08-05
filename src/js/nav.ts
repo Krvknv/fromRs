@@ -1,5 +1,5 @@
 import { store } from './store';
-import { registerTable } from './tableWinners';
+import { registerTable, showWinnersQuantity } from './tableWinners';
 
 const createHeader = () => {
     const body = document.querySelector('body') as HTMLBodyElement;
@@ -79,6 +79,10 @@ export const handlerPageChanger = async () => {
         pageNum.textContent = `page ${localStorage.getItem('pageNumWinners') || store.pageNumWinners}`;
 
         localStorage.setItem('place', 'winners');
+
+        const winnersQuantity = await showWinnersQuantity();
+        localStorage.setItem('winnersQuantity', String(winnersQuantity));
+        quantity.textContent = `${winnersQuantity}`;
     }
 };
 

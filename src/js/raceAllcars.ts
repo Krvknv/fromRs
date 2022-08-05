@@ -2,7 +2,7 @@ import { getCars } from './api/car';
 import { driveCar } from './api/engine';
 import { postWinner } from './api/winners';
 import { store } from './store';
-import { registerTable, updateTable } from './tableWinners';
+import { registerTable, showWinnersQuantity, updateTable } from './tableWinners';
 import { TCar, TWinnerData } from './types';
 
 const animmateRace = async (value: string) => {
@@ -56,6 +56,9 @@ export const raceAllCars = async () => {
     // winnerWrapper.remove();
     // await registerTable();
     updateTable();
+
+    // const winnersQuantity = showWinnersQuantity();
+    // localStorage.setItem('winnersQuantity', String(winnersQuantity));
 
     // registerTable();
     // console.log(await test(), 'teeeeeeeeeeeest');

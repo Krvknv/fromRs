@@ -14,6 +14,7 @@ import { changeCar, updateCar } from './updateCar';
 import { deleteCar } from './deleteCar';
 import { raceCar, returnCar } from './race';
 import { raceAllCars, resetAllCars } from './raceAllcars';
+import { sortWinners } from './sort';
 
 export const startApp = async () => {
     // navigate controls
@@ -90,4 +91,11 @@ export const startApp = async () => {
 
     const resetBtn = document.querySelector('.reset-btn');
     resetBtn.addEventListener('click', resetAllCars);
+
+    // sort
+    const btnSortWins = document.querySelector('.sort-win');
+    const btnSorttime = document.querySelector('.sort-time');
+
+    btnSortWins.addEventListener('click', sortWinners);
+    btnSorttime.addEventListener('click', sortWinners);
 };

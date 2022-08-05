@@ -27,7 +27,9 @@ body {
 .btn-select,
 .btn-remove,
 .btn-a,
-.btn-b {
+.btn-b,
+.sort-win,
+.sort-time {
     padding: 10px 30px;
     cursor: pointer;
     text-transform: capitalize;
@@ -189,4 +191,9 @@ body {
     align-items: center;
     border-radius: 50px;
     text-transform: capitalize;
+}
+
+.sort-win,
+.sort-time {
+    margin-bottom: 30px;
 }
