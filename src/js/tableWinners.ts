@@ -15,9 +15,38 @@ const createTable = () => {
     const table = document.createElement('table');
     table.classList.add('table');
 
+    // const tableHead = document.createElement('tr');
+    // tableHead.classList.add('table-head');
+    // table.append(tableHead);
+
+    // const number = document.createElement('th');
+    // number.textContent = 'number';
+    // tableHead.append(number);
+
+    // const car = document.createElement('th');
+    // car.textContent = 'car';
+    // tableHead.append(car);
+
+    // const name = document.createElement('th');
+    // name.textContent = 'name';
+    // tableHead.append(name);
+
+    // const win = document.createElement('th');
+    // win.textContent = 'win';
+    // tableHead.append(win);
+
+    // const bestTime = document.createElement('th');
+    // bestTime.textContent = 'best time';
+    // tableHead.append(bestTime);
+
+    return table;
+};
+export const createHeaderTable = () => {
+    // const table = createTable();
+
     const tableHead = document.createElement('tr');
     tableHead.classList.add('table-head');
-    table.append(tableHead);
+    // table.append(tableHead);
 
     const number = document.createElement('th');
     number.textContent = 'number';
@@ -39,9 +68,9 @@ const createTable = () => {
     bestTime.textContent = 'best time';
     tableHead.append(bestTime);
 
-    return table;
+    return tableHead;
 };
-const createRow = (winnerData: TFullWinner) => {
+export const createRow = (winnerData: TFullWinner) => {
     const row = document.createElement('tr');
     row.classList.add('table-row');
 
@@ -83,22 +112,43 @@ const prepareData = (winners: TWinner[], cars: TCar[]) => {
 
     return resultArr;
 };
-export const registerTable = async () => {
+
+export const selectWinners = async () => {
     const carsResponse = await fetch(GET_CAR_URL);
     const carsData = await carsResponse.json();
 
-    const winnersData = await getWinners(10, store.winnersQuantity);
+    const winnersData = await getWinners(10, store.pageNumWinners);
 
     const fullWinners = prepareData(winnersData, carsData);
+
+    return fullWinners;
+};
+
+export const registerTable = async () => {
+    const fullWinners = await selectWinners();
     const main = document.querySelector('.main');
     const table = createTable();
     const winnersWrapper = createWinnersWrapper();
+    const tableHeader = createHeaderTable();
+
+    table.append(tableHeader);
 
     winnersWrapper.append(table);
 
     main.append(winnersWrapper);
 
     for (const winner of fullWinners) {
+        const row = createRow(winner);
+        table.append(row);
+    }
+};
+
+export const updateTable = async () => {
+    const table = document.querySelector('.table');
+    table.innerHTML = null;
+    table.append(createHeaderTable());
+    const winnersData = await selectWinners();
+    for (const winner of winnersData) {
         const row = createRow(winner);
         table.append(row);
     }
