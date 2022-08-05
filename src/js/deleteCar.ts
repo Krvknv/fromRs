@@ -1,7 +1,8 @@
 import { getAllCars, getCars } from './api/car';
-import { GET_CAR_URL } from './constants';
+import { GET_CAR_URL, GET_WINNERS_URL } from './constants';
 import { createTrack } from './garage';
 import { store } from './store';
+import { showWinnersQuantity, updateTable } from './tableWinners';
 import { TCar } from './types';
 
 // const findCar = async (node: HTMLElement) => {
@@ -9,6 +10,17 @@ import { TCar } from './types';
 //     const car = carsData.find((item: TCar) => item.id === +node.dataset.carid);
 //     return car;
 // };
+const deleteWinner = async (id: number) => {
+    const response = await fetch(`${GET_WINNERS_URL}/${id}`, {
+        method: 'DELETE',
+    });
+    if (response.status === 200) {
+        const winnersQuantity = showWinnersQuantity();
+        localStorage.setItem('winnersQuantity', String(winnersQuantity));
+
+        updateTable();
+    }
+};
 
 export const deleteCar = async (event: Event) => {
     const quantity = document.querySelector('.quantity');
@@ -36,5 +48,7 @@ export const deleteCar = async (event: Event) => {
             const track = createTrack(carItem);
             trackList.append(track);
         }
+
+        deleteWinner(id);
     }
 };
