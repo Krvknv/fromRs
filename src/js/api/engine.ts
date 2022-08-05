@@ -11,15 +11,26 @@ export const driveCar = async (id: string, status: string, animation?: Animation
     if (response.status === 500) {
         animation.pause();
     }
-
-    const formatedesponse = await response.json();
-
-    if (status === 'drive') {
-        formatedesponse.carId = id;
-        formatedesponse.time = Math.trunc(params.distance / params.velocity);
+    // const formatedresponse = await response.json();
+    let formatedresponse;
+    if (!params) {
+        if (status === 'drive') {
+            formatedresponse = await response.text();
+        } else {
+            formatedresponse = await response.json();
+        }
+    } else {
+        formatedresponse = await response.json();
     }
 
-    return formatedesponse;
+    if (params) {
+        if (status === 'drive') {
+            formatedresponse.carId = id;
+            formatedresponse.time = Math.trunc(params.distance / params.velocity);
+        }
+    }
+
+    return formatedresponse;
     // } catch (error) {}
 };
 
