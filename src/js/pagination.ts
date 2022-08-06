@@ -89,7 +89,6 @@ const tuneNextBtn = async () => {
 };
 
 export const handlerPagination = (event: Event) => {
-    console.log('click');
     const node = event.target as HTMLElement;
     if (node.dataset.direction === 'previous') {
         tunePreviousBtn();

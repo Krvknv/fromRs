@@ -49,7 +49,6 @@ export const raceAllCars = async () => {
     if (promise === undefined) {
         return;
     }
-    console.log(promise, 'promise');
     showWinner(promise);
     postWinner(promise);
 
