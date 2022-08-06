@@ -12,8 +12,13 @@ export const sortWinners = async (event: Event) => {
     if (node.classList.contains('sort-time')) {
         winnersData.sort((a, b) => a.time - b.time);
     }
-    for (const winner of winnersData) {
-        const row = createRow(winner);
+
+    winnersData.forEach((item, index) => {
+        const row = createRow(item, index);
         table.append(row);
-    }
+    });
+    // for (const winner of winnersData) {
+    //     const row = createRow(winner);
+    //     table.append(row);
+    // }
 };

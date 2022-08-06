@@ -12,4 +12,5 @@ export const store: TStore = {
     carId: '',
     animation: null,
     animationArr: [],
+    winnerNum: 0,
 };

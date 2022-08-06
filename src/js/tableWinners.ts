@@ -85,12 +85,14 @@ export const createHeaderTable = () => {
 
     return tableHead;
 };
-export const createRow = (winnerData: TFullWinner) => {
+
+export const createRow = (winnerData: TFullWinner, index: number) => {
     const row = document.createElement('tr');
     row.classList.add('table-row');
 
     const number = document.createElement('td');
-    number.textContent = `1`;
+    const plus = store.pageNumWinners === 1 ? 0 : store.pageNumWinners * 10 - 10;
+    number.textContent = `${index + 1 + plus}`;
     row.append(number);
 
     const car = document.createElement('td');
@@ -155,10 +157,14 @@ export const registerTable = async () => {
 
     main.append(winnersWrapper);
 
-    for (const winner of fullWinners) {
-        const row = createRow(winner);
+    fullWinners.forEach((item, index) => {
+        const row = createRow(item, index);
         table.append(row);
-    }
+    });
+    // for (const winner of fullWinners) {
+    //     const row = createRow(winner);
+    //     table.append(row);
+    // }
 };
 
 export const updateTable = async () => {
@@ -166,8 +172,13 @@ export const updateTable = async () => {
     table.innerHTML = null;
     table.append(createHeaderTable());
     const winnersData = await selectWinners();
-    for (const winner of winnersData) {
-        const row = createRow(winner);
+
+    winnersData.forEach((item, index) => {
+        const row = createRow(item, index);
         table.append(row);
-    }
+    });
+    // for (const winner of winnersData) {
+    //     const row = createRow(winner);
+    //     table.append(row);
+    // }
 };

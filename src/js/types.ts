@@ -28,6 +28,7 @@ export type TStore = {
     carId: string;
     animation: Animation | null;
     animationArr: Animation[];
+    winnerNum: number;
 };
 
 export type TWinnerData = {
