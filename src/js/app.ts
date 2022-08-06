@@ -47,17 +47,6 @@ export const startApp = async () => {
     // start app
     window.addEventListener('hashchange', handlerPageChanger);
 
-    // const gameControls = document.querySelector('.game-controls');
-
-    // gameControls.addEventListener('click', (event) => {
-    //     if ((event.target as HTMLElement).classList.contains('btn-a')) {
-    //         console.log('a');
-    //     }
-    //     if ((event.target as HTMLElement).classList.contains('btn-b')) {
-    //         console.log('b');
-    //     }
-    // });
-
     // generate cars
     const generateBtn = document.querySelector('.generate-btn');
     generateBtn.addEventListener('click', generateCars);

@@ -1,5 +1,4 @@
 import { GET_WINNERS_URL } from '../constants';
-import { registerTable } from '../tableWinners';
 import { TWinnerData } from '../types';
 
 export const getWinners = async (limit: number, page: number) => {

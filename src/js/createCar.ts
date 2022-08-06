@@ -1,7 +1,6 @@
 import { getAllCars, getCars } from './api/car';
 import { GET_CAR_URL } from './constants';
 import { createTrack } from './garage';
-import { generateColor, generateName } from './generateCars';
 import { store } from './store';
 
 export const createCar = async () => {
@@ -24,8 +23,6 @@ export const createCar = async () => {
         },
         body: JSON.stringify(car),
     });
-    // const allCars = await fetch(GET_CAR_URL);
-    // const allCarsJson = await allCars.json();
 
     const allCars = await getAllCars();
     const carsQuantity = allCars.length;

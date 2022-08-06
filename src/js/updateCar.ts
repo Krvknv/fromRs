@@ -13,26 +13,18 @@ const changeOptions = (value: boolean) => {
     colorInput.disabled = value;
     updateBtn.disabled = value;
 };
+
 const changeStyles = (event: Event) => {
     const nameInput = document.querySelector('.update > .input-text') as HTMLInputElement;
-    // const colorInput = document.querySelector('.update > .input-color') as HTMLInputElement;
-    // const updateBtn = document.querySelector('.update-btn') as HTMLButtonElement;
 
     const btnSelect = event.target as HTMLElement;
     const block = btnSelect.parentElement.parentElement;
 
     if (nameInput.disabled) {
-        // nameInput.disabled = false;
-        // colorInput.disabled = false;
-        // updateBtn.disabled = false;
         changeOptions(false);
 
         block.style.border = '2px solid #41436A';
     } else {
-        // nameInput.disabled = true;
-        // colorInput.disabled = true;
-        // updateBtn.disabled = true;
-
         changeOptions(true);
 
         block.style.border = 'none';
@@ -57,7 +49,6 @@ export const changeCar = async () => {
     const trackList = document.querySelector('.track-list');
     const nameInput = document.querySelector('.update > .input-text') as HTMLInputElement;
     const colorInput = document.querySelector('.update > .input-color') as HTMLInputElement;
-    // const updateBtn = document.querySelector('.update-btn') as HTMLButtonElement;
     const tracksArr = document.querySelectorAll('.track-wrapper');
     if (nameInput.value === '') {
         alert("Please enter car's name");
@@ -90,7 +81,4 @@ export const changeCar = async () => {
     nameInput.value = '';
 
     changeOptions(true);
-    // nameInput.disabled = true;
-    // colorInput.disabled = true;
-    // updateBtn.disabled = true;
 };

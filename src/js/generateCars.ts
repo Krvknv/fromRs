@@ -56,6 +56,7 @@ const colors = [
     '#3A5743',
     '#3B7080',
 ];
+
 export const generateName = () => {
     const brandIndex = Math.floor(Math.random() * (brands.length - 1 - 0 + 1));
     const modelIndex = Math.floor(Math.random() * (models.length - 1 - 0 + 1));

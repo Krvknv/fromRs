@@ -1,5 +1,5 @@
 import { store } from './store';
-import { registerTable, showWinnersQuantity } from './tableWinners';
+import { showWinnersQuantity } from './tableWinners';
 
 const createHeader = () => {
     const body = document.querySelector('body') as HTMLBodyElement;
@@ -41,41 +41,27 @@ export const handlerPageChanger = async () => {
     const hash = window.location.hash.slice(1);
 
     if (hash === 'garage' || hash === '') {
-        // options.style.opacity = '1';
-        // garageWrapper.style.opacity = '1';
-        // winnersWrapper.style.opacity = '0';
         options.style.display = 'flex';
         garageWrapper.style.display = 'flex';
         winnersWrapper.style.display = 'none';
 
         pageName.textContent = 'garage';
-
         store.pageName = 'garage';
 
-        // quantity.textContent = `${store.carsQuantity}`;
         quantity.textContent = `${localStorage.getItem('carsQuantity') || store.carsQuantity}`;
-
         pageNum.textContent = `page ${localStorage.getItem('pageNumGarage') || store.pageNumGarage}`;
 
         localStorage.setItem('place', 'garage');
     }
-
     if (hash === 'winners') {
-        // table
-
-        // options.style.opacity = '0';
-        // garageWrapper.style.opacity = '0';
-        // winnersWrapper.style.opacity = '1';
         options.style.display = 'none';
         garageWrapper.style.display = 'none';
         winnersWrapper.style.display = 'block';
 
         pageName.textContent = 'winners';
-
         store.pageName = 'winners';
 
         quantity.textContent = `${store.winnersQuantity}`;
-
         pageNum.textContent = `page ${localStorage.getItem('pageNumWinners') || store.pageNumWinners}`;
 
         localStorage.setItem('place', 'winners');

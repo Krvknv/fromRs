@@ -30,38 +30,12 @@ const createTable = () => {
     const table = document.createElement('table');
     table.classList.add('table');
 
-    // const tableHead = document.createElement('tr');
-    // tableHead.classList.add('table-head');
-    // table.append(tableHead);
-
-    // const number = document.createElement('th');
-    // number.textContent = 'number';
-    // tableHead.append(number);
-
-    // const car = document.createElement('th');
-    // car.textContent = 'car';
-    // tableHead.append(car);
-
-    // const name = document.createElement('th');
-    // name.textContent = 'name';
-    // tableHead.append(name);
-
-    // const win = document.createElement('th');
-    // win.textContent = 'win';
-    // tableHead.append(win);
-
-    // const bestTime = document.createElement('th');
-    // bestTime.textContent = 'best time';
-    // tableHead.append(bestTime);
-
     return table;
 };
-export const createHeaderTable = () => {
-    // const table = createTable();
 
+export const createHeaderTable = () => {
     const tableHead = document.createElement('tr');
     tableHead.classList.add('table-head');
-    // table.append(tableHead);
 
     const number = document.createElement('th');
     number.textContent = 'number';
@@ -114,6 +88,7 @@ export const createRow = (winnerData: TFullWinner, index: number) => {
 
     return row;
 };
+
 const prepareData = (winners: TWinner[], cars: TCar[]) => {
     const carsObj: { [key: string]: TCar } = {};
     const resultArr: TFullWinner[] = [];
@@ -161,10 +136,6 @@ export const registerTable = async () => {
         const row = createRow(item, index);
         table.append(row);
     });
-    // for (const winner of fullWinners) {
-    //     const row = createRow(winner);
-    //     table.append(row);
-    // }
 };
 
 export const updateTable = async () => {
@@ -177,8 +148,4 @@ export const updateTable = async () => {
         const row = createRow(item, index);
         table.append(row);
     });
-    // for (const winner of winnersData) {
-    //     const row = createRow(winner);
-    //     table.append(row);
-    // }
 };

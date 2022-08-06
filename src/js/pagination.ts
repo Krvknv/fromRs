@@ -1,9 +1,7 @@
 import { getCars } from './api/car';
-import { getWinners } from './api/winners';
 import { createTrack } from './garage';
 import { store } from './store';
-import { createHeaderTable, createRow, registerTable, selectWinners, updateTable } from './tableWinners';
-import { updateCar } from './updateCar';
+import { updateTable } from './tableWinners';
 
 const createPagination = () => {
     const main = document.querySelector('.main');
@@ -30,7 +28,6 @@ export const registerPagination = () => {
 };
 
 const tunePreviousBtn = async () => {
-    // const table = document.querySelector('.table');
     const pageNum = document.querySelector('.page-num');
     const trackList = document.querySelector('.track-list');
     const hash = window.location.hash.slice(1);
@@ -56,22 +53,11 @@ const tunePreviousBtn = async () => {
             pageNum.textContent = `page ${store.pageNumWinners}`;
 
             updateTable();
-            // table.innerHTML = null;
-            // table.append(createHeaderTable());
-            // const winnersData = await selectWinners();
-            // for (const winner of winnersData) {
-            //     const row = createRow(winner);
-            //     table.append(row);
-            // }
-            // winnerWrapper.remove();
-            // await registerTable();
-            // console.log(store, 'prev');
         }
     }
 };
 
 const tuneNextBtn = async () => {
-    // const table = document.querySelector('.table');
     const pageNum = document.querySelector('.page-num');
     const trackList = document.querySelector('.track-list');
     const hash = window.location.hash.slice(1);
@@ -98,16 +84,6 @@ const tuneNextBtn = async () => {
             pageNum.textContent = `page ${store.pageNumWinners}`;
 
             updateTable();
-            // table.innerHTML = null;
-            // table.append(createHeaderTable());
-            // const winnersData = await selectWinners();
-            // for (const winner of winnersData) {
-            //     const row = createRow(winner);
-            //     table.append(row);
-            // }
-            // winnerWrapper.remove();
-            // await registerTable();
-            // console.log(store, 'next');
         }
     }
 };

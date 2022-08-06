@@ -17,8 +17,4 @@ export const sortWinners = async (event: Event) => {
         const row = createRow(item, index);
         table.append(row);
     });
-    // for (const winner of winnersData) {
-    //     const row = createRow(winner);
-    //     table.append(row);
-    // }
 };

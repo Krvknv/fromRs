@@ -26,6 +26,15 @@ const createFlag = () => {
     return flag;
 };
 
+const createBtn = (className: string, text: string, id: number) => {
+    const btn = document.createElement('button');
+    btn.classList.add(className);
+    btn.textContent = text;
+    btn.setAttribute('data-carId', `${id}`);
+
+    return btn;
+};
+
 export const createTrack = (carData: TCar) => {
     const trackWrapper = document.createElement('div');
     trackWrapper.classList.add('track-wrapper');
@@ -35,39 +44,22 @@ export const createTrack = (carData: TCar) => {
     trackHeader.classList.add('track-header');
     trackWrapper.append(trackHeader);
 
-    const btnSelect = document.createElement('button');
-    btnSelect.classList.add('btn-select');
-    btnSelect.textContent = 'select';
-    btnSelect.setAttribute('data-carId', `${carData.id}`);
-    trackHeader.append(btnSelect);
-
-    const btnRemove = document.createElement('button');
-    btnRemove.classList.add('btn-remove');
-    btnRemove.textContent = 'remove';
-    btnRemove.setAttribute('data-carId', `${carData.id}`);
-    trackHeader.append(btnRemove);
+    const btnSelect = createBtn('btn-select', 'select', carData.id);
+    const btnRemove = createBtn('btn-remove', 'remove', carData.id);
 
     const carName = document.createElement('span');
     carName.classList.add('car-name');
     carName.textContent = carData.name;
-    trackHeader.append(carName);
+
+    trackHeader.append(btnSelect, btnRemove, carName);
 
     const gameControls = document.createElement('div');
     gameControls.classList.add('game-controls');
     trackWrapper.append(gameControls);
 
-    const btnA = document.createElement('button');
-    btnA.classList.add('btn-a');
-    btnA.textContent = 'a';
-    btnA.setAttribute('data-carId', `${carData.id}`);
-    gameControls.append(btnA);
-
-    const btnB = document.createElement('button');
-    btnB.classList.add('btn-b');
-    btnB.textContent = 'b';
-    btnB.disabled = true;
-    btnB.setAttribute('data-carId', `${carData.id}`);
-    gameControls.append(btnB);
+    const btnA = createBtn('btn-a', 'a', carData.id);
+    const btnB = createBtn('btn-b', 'b', carData.id);
+    gameControls.append(btnA, btnB);
 
     const car = document.createElement('div');
     car.classList.add('car');
