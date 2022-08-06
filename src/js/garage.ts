@@ -32,6 +32,9 @@ const createBtn = (className: string, text: string, id: number) => {
     btn.textContent = text;
     btn.setAttribute('data-carId', `${id}`);
 
+    if (className === 'btn-b') {
+        btn.disabled = true;
+    }
     return btn;
 };
 
