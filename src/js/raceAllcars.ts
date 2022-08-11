@@ -37,7 +37,16 @@ const showWinner = async (winnerData: TWinnerData) => {
     }, 2000);
 };
 
+const changeBtns = (value: boolean) => {
+    const btnA = document.querySelectorAll('.btn-a');
+    const btnB = document.querySelectorAll('.btn-b');
+
+    btnA.forEach((item) => ((item as HTMLButtonElement).disabled = value));
+    btnB.forEach((item) => ((item as HTMLButtonElement).disabled = value));
+};
 export const raceAllCars = async () => {
+    changeBtns(true);
+
     const carsData = await getCars(7, store.pageNumGarage);
     const arr = [];
     for (const car of carsData) {
@@ -56,6 +65,10 @@ export const raceAllCars = async () => {
 };
 
 export const resetAllCars = () => {
+    const btnA = document.querySelectorAll('.btn-a');
+
+    btnA.forEach((item) => ((item as HTMLButtonElement).disabled = false));
+
     for (const animate of store.animationArr) {
         animate.cancel();
     }

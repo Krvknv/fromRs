@@ -21,7 +21,7 @@ const createWinnersWrapper = () => {
 const createSortBtn = (className: string, text: string) => {
     const btn = document.createElement('button');
     btn.classList.add(`${className}`);
-    btn.textContent = `${text}`;
+    btn.textContent = `${text} increase`;
 
     return btn;
 };

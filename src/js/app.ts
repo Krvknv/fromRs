@@ -3,7 +3,7 @@ import { registerGarageMain } from './garageMain';
 
 import { handlerPageChanger } from './nav';
 import { registerOptionBlock } from './optionBlock';
-import { handlerPagination, registerPagination } from './pagination';
+import { changeNextBtn, handlerPagination, registerPagination } from './pagination';
 import { registerGarage } from './garage';
 import { registerTable } from './tableWinners';
 import { generateCars } from './generateCars';
@@ -40,6 +40,9 @@ export const startApp = async () => {
 
     // show right page
     handlerPageChanger();
+
+    // pagination
+    await changeNextBtn();
 
     //
     // handlers

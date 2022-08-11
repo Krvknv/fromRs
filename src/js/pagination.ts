@@ -2,6 +2,7 @@ import { getCars } from './api/car';
 import { createTrack } from './garage';
 import { store } from './store';
 import { updateTable } from './tableWinners';
+import { getWinners } from './api/winners';
 
 const createPagination = () => {
     const main = document.querySelector('.main');
@@ -57,6 +58,23 @@ const tunePreviousBtn = async () => {
     }
 };
 
+export const changeNextBtn = async () => {
+    const nextBtn = document.querySelector('.next-btn') as HTMLButtonElement;
+    const hash = window.location.hash.slice(1);
+
+    if (hash === 'garage' || hash === '') {
+        const testPage = await getCars(7, store.pageNumGarage + 1);
+        if (testPage.length === 0) {
+            nextBtn.disabled = true;
+        }
+    }
+    if (hash === 'winners') {
+        const testPage = await getWinners(10, store.pageNumWinners + 1);
+        if (testPage.length === 0) {
+            nextBtn.disabled = true;
+        }
+    }
+};
 const tuneNextBtn = async () => {
     const pageNum = document.querySelector('.page-num');
     const trackList = document.querySelector('.track-list');
@@ -86,10 +104,11 @@ const tuneNextBtn = async () => {
             updateTable();
         }
     }
+    await changeNextBtn();
 };
 
 export const handlerPagination = (event: Event) => {
-    const node = event.target as HTMLElement;
+    const node = event.target as HTMLButtonElement;
     if (node.dataset.direction === 'previous') {
         tunePreviousBtn();
     }
